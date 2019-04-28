@@ -1,0 +1,105 @@
+\documentclass[oneside,numbers,spanish,nofancyhdr,12pt,oneside]{ezthesis}
+\usepackage[utf8]{inputenc}
+\usepackage{notoccite}
+\usepackage{amsmath,amsthm}
+\usepackage{subcaption}
+\usepackage{float}
+\usepackage{graphicx} % fugures
+\usepackage{empheq} % ecuaciones encerradas 
+\usepackage{parskip} % suprimir la sangria
+\usepackage{wrapfig} %figuras con texto al lado
+
+% Added by Safi
+\usepackage{xcolor}
+\definecolor{marron}{RGB}{60,30,10}
+\definecolor{darkblue}{RGB}{0,0,80}
+\definecolor{lightblue}{RGB}{80,80,80}
+\definecolor{darkgreen}{RGB}{0,80,0}
+\definecolor{darkgray}{RGB}{35,31,32}
+\definecolor{Lundblue}{RGB}{0,52,119}
+\definecolor{Lundgold}{RGB}{154,91,11}
+
+\usepackage{fancyhdr}
+\usepackage{fourier-orns}
+\newcommand{\ornamento}{\vspace{2em}\noindent \textcolor{Lundgold}{\hrulefill~ \raisebox{-2.5pt}[10pt][10pt]{\leafright \decofourleft \decothreeleft  \aldineright \decotwo \floweroneleft \decoone   \floweroneright \decotwo \aldineleft\decothreeright \decofourright \leafleft} ~  \hrulefill \\ \vspace{2em}}}
+\newcommand{\ornface}{ \noindent
+  \color{Lundgold}\raisebox{-2.1pt}[10pt][10pt]{\leafright} \hrulefill
+  \raisebox{-4pt}[10pt][10pt]{~~~\decofourleft \decotwo\decofourright~~~}
+  \hrulefill \raisebox{-2.1pt}[10pt][10pt]{ \leafleft}  }
+\newcommand{\colorrule}[3]{\textcolor{#1}{\rule{#2}{#3}}}
+
+\makeatletter
+\def\headrule{{\color{Lundgold}\raisebox{-2.1pt}[10pt][10pt]{\leafright} \hrulefill \raisebox{-2.1pt}[10pt][10pt]{~~~\decofourleft \decotwo\decofourright~~~} \hrulefill \raisebox{-2.1pt}[10pt][10pt]{ \leafleft}}}
+\makeatother
+\fancyhf{}
+\renewcommand{\sectionmark}[1]{\markright{#1}}
+\newcommand{\estcab}[1]{\itshape\textcolor{Lundgold}{\nouppercase #1}}
+\fancyhead[LO]{\estcab{\rightmark}}
+\fancyhead[RO]{\bf\estcab{\leftmark}}
+\fancyfoot[LO]{\large \hfill  \,\,\, \sffamily\bf \textcolor{darkgray}{\bf{\itshape \thepage}}  \hfill}
+\pagestyle{fancy}
+
+\usepackage[compat=1.0.0]{tikz-feynman}
+\usepackage[object=vectorian]{pgfornament}
+
+\newcommand{\sectionlinetwo}[2]{%
+  \nointerlineskip \vspace{.5\baselineskip}\hspace{\fill}
+  {\color{#1}
+    \resizebox{0.5\linewidth}{2ex}
+    {{%
+    {\begin{tikzpicture}
+    \node  (C) at (0,0) {};
+    \node (D) at (9,0) {};
+    \path (C) to [ornament=#2] (D);
+    \end{tikzpicture}}}}}%
+    \hspace{\fill}
+    \par\nointerlineskip \vspace{.5\baselineskip}
+  }
+\usepackage{eso-pic}
+\usepackage{rotating}
+\usepackage{graphicx}
+\usepackage{float}
+
+
+
+%\usepackage[none]{hyphenat} % for latex does not cut the words 
+\author{Lcda. Margionet Fabiola Díaz}
+\title{Bosque de Lyman-$\alpha$}
+\degree{Magíster en Física, mención Astrofísica}
+\supervisor{Dr. Octavio Valenzuela \\ Universidad Nacional Autónoma de México (UNAM) \\
+Cotutor: Dra. Fabiola Hernández}
+\institution{Universidad de los Andes}
+\faculty{Facultad de Ciencias}
+\department{Posgrado en Física Fundamental (PFF)}
+
+\hyperlinking
+\begin{document}
+
+\include{titlepage}
+\renewcommand{\thepage}{\roman{page}}
+\include{abstract}
+\include{gracias}
+\setcounter{tocdepth}{3}
+\setcounter{secnumdepth}{3}
+\tableofcontents
+\addcontentsline{toc}{chapter}{Indice General}
+\newpage
+
+\renewcommand{\thepage}{\arabic{page}}
+\setcounter{page}{1}
+\include{capitulo1}
+\include{capitulo2}
+\include{capitulo3}
+\include{conclusiones}
+
+\appendix
+%\include{apendiceA}
+%\include{apendiceB}
+%\include{apendiceC}
+
+%\nocite{*}
+%\bibliographystyle{ieeetr}
+\bibliography{referencias}
+
+
+\end{document}

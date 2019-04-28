@@ -1,0 +1,568 @@
+\chapter{Marco teórico}
+
+\section*{Preliminares}
+
+{\textit{Hola}}
+  
+\section{Fundamentls de la Transferencia Radiativa}
+
+    A primera vista podemos considerar un {\textit{campo de radiación}} como líneas rectas viajando por el espacio libre, o un medio homogéneo, en todas las direcciones. Estas líneas pueden considerarse ``rayos" partiendo del hecho de que la escala del sistema considerada es mucho mayor que la longitud de onda de la radiación, y de esta manera la teoría de transferencia puede surgir. Para tener una idea clara de la teoría y la {\textit{ecuación de transferencia radiativa}} que la gobierna, es necesario definir algunas cantidades fundamentales como la intensidad específica, flujo de energía, densidad de energía, presión de radiación, y algunos procesos como la emisión y la absorción que afectan a la intensidad para que esta deje de ser constante.
+	
+	Para estudiar el campo de radiación se requiere la cantidad de energía radiante $dE_{\nu}$ en un intervalo de frecuencia específica $(\nu, \nu + d\nu)$ la cual es transportada a través de un elemento de área $d\sigma$ y en direcciones confinadas a un elemento de ángulo sólido $d\omega$ durante un tiempo dt (ver fig. \ref{fig:2.1}).
+    Así:
+
+        \begin{equation} \label{eq:2.1}
+            dE_{\nu} = I_{\nu} \cos \theta d\nu d\sigma  d\omega dt,
+        \end{equation}
+	 
+	donde $I_{\nu}$ es la {\textit{intensidad específica o brillo}} con unidades en el sistema cgs de 
+
+        $$I_{\nu} \rightarrow{\mathrm{erg \, Hz^{-1} cm^{-2}  ster^{-1} s^{-1} }},$$
+
+    siendo $\theta$ el ángulo que forma el haz de radiación con la normal que apunta hacia afuera.
+    
+    \begin{wrapfigure}[14]{r}{0.5\linewidth} 
+            \includegraphics[width=0.7\textwidth]{fig1_1_intensidad.png}
+            \caption{{\small{Diagrama esquemático que muestra cómo es definida la intensidad específica. (Referencia: Radiative Transfer, Chandrasekhar S., pp 1.)}}}
+        \label{fig:2.1} 
+    \end{wrapfigure}
+
+    En un medio que disperse, absorba o emita radiación, la intensidad $I_{\nu}$ puede variar, de manera que es una función que depende del punto y de la dirección además del tiempo. Esto significa que
+
+        $$I_{\nu}  \equiv  I_{\nu}(\bf{r}; \bf{\Omega};t),$$
+
+    con $\bf{r}$ el radio vector y $\bf{\Omega}$ la dirección. Así, en coordenadas cartesianas 
+    
+        $$I_{\nu} \equiv I_{\nu}(x,y,z; l,m,n;t,),$$
+
+    donde $x,y,z$ y $l,m,n$ definen el punto y la dirección, respectivamente. 
+
+    En astrofísica, un caso de gan interés es el de una atmósfera estratificada en capas de planos paralelos:
+
+        $$I_{\nu} = I_{\nu}(z,\theta, \varphi;t),$$
+        
+    con $z$ la altura medida en dirección normal al plano de estratificación y $\theta, \varphi$ el ángulo polar y azimutal respectivamente.
+    
+    Otro caso interesante es el de simetría esférica 
+    
+        $$I_{\nu} = I_{\nu}(r,\theta;t),$$
+        
+    donde $r$ es el radio de la esfera y $\theta$ el ángulo que forma el haz de radiación con el radiovector.
+	   
+	Se dice que un campo de radiación es isotrópico si la intensidad $I_{\nu}$ es independiente de la dirección en ese punto: $I_{\nu} = I_{\nu}(r;t)$. 
+	Además, es isotrópico y homogéneo si $I_{\nu}$ es la misma en todos los puntos además de en todas las direcciones: $I_{\nu} = I_{\nu}(t)$. 
+	   
+	 Por último, la intensidad $I_{\nu}$ integrada sobre todas las frecuencias es denotada por $I$ y se conoce como la {\textit{intensidad integrada}}:
+	   
+	   \begin{equation} \label{eq:1.2}
+	       I = \int_0^{\infty}{I_{\nu} d\nu.}
+	   \end{equation}
+	   
+	   
+\subsection{Flujo Neto y Flujo de Momento}
+
+    La ec. (\ref{eq:2.1}) describe la energía en el intervalo de frecuencia $(\nu, \nu + d\nu)$ que fluye a través de un elemento de área $d\sigma$ en una dirección que está inclinada un ángulo $\theta$ y confinado a un elemento de ángulo sólido $d\omega$. Por su parte, el {\textit{Flujo}} $F_{\nu}$ es definido como la cantidad de energía radiante transferida a través de un elemento de área en un tiempo $dt$ y en un intervalo de frecuencia. De la ec. (\ref{eq:2.1}) 
+    
+        \begin{equation} \label{eq:2.3} 
+            dF_{\nu} = \frac{dE_{\nu}}{d\nu d\sigma dt} = I_{\nu} \cos \theta d\omega \hspace{0.5cm} \rightarrow{\mathrm{erg \, Hz^{-1} \, cm^{-2} \,s^{-1}}}.
+        \end{equation}
+ 
+    Así, el flujo neto en la dirección $\bf{n}$ es obtenido por integrar sobre todos los ángulos sólidos
+ 
+        \begin{equation} \label{eq:2.4}
+            F_{\nu} = \int{I_{\nu} \cos \theta d\omega}.
+        \end{equation}
+        
+    Si la intensidad se encuentra en un campo de radiación isotrópico (no es una función del ángulo) el flujo neto es cero ya que
+
+        $$\int{\cos \theta} = 0,$$
+
+    esto significa que hay tanta energía cruzando $d\sigma$ en la dirección $\bf{n}$ como en la dirección $\bf{-n}$. La dependencia del flujo en la dirección muestra que el flujo es de caracter vectorial. 
+    
+    \vspace{0.5cm}
+
+{\bf{\large{Flujo de Momento}}}
+
+
+    \vspace{0.4cm}
+ 
+    El momento de un fotón $\gamma$ viene dado por $E/c$, con $c$ la velocidad de la luz $c = 3 \times 10^{10} cm \, s^{-1}$. De esta manera, el flujo de momento a lo largo de un rayo es
+    
+        $$dF_{\nu}/c.$$
+
+    Para obtener la componente del flujo de momento normal a $d\sigma$ multiplicamos por otro factor $\cos \theta$. Integrando
+    
+        \begin{equation} \label{eq:2.5}
+            p_{\nu} = \frac{1}{c}\int{I_{\nu} \cos^2 \theta d\omega} \hspace{0.5cm} \rightarrow{\mathrm{dy \, cm^{-2} Hz^{-1}}}.
+        \end{equation}
+
+    El flujo neto $F_{\nu}$ y el flujo de momento $p_{\nu}$ son considerados el primer momento de la distribución angular y el segundo momento, de la intensidad $I_{\nu}$, respectivamente. Ambos son multiplicaciones por potencias del $\cos \theta$ e integración sobre $d\omega$. Integrando sobre todas las frecuencias, obtenemos el flujo total (integrado):
+    
+        \begin{align} \label{eq:2.6}
+            F & = \int{F_{\nu} d\nu} \hspace{2cm} \textrm{y} \\
+            p & = \int{p_{\nu}d\nu}. \label{eq:2.7}
+        \end{align}
+
+    
+\subsection{Densidad de Energía Radiativa $u$}
+    
+    La cantidad conocida como la {\textit{densidad de energía específica}} $u_{\nu}$ es definida como la energía por unidad de volumen por unidad de rango de frecuencia. Para determinar $u_{\nu}$ es conveniente primero determinar la densidad de energía por unidad de ángulo sólido $d\omega$. 
+
+        \begin{equation} \label{eq:2.8} 
+            dE_{\nu} = u_{\nu}(\omega)dVd\omega d\nu, 
+        \end{equation}
+
+    con $dV$ el elemento de volumen, $dV=d\sigma ds$. Para un cilindro que rodea un rayo de longitud $ct$ (ver fig \ref{fig:2.2})., el volumen viene expresado como $dV=d\sigma cdt$. Así mismo, la radiación viaja a la velocidad $c$ de manera que en un tiempo $dt$ toda la radiación habrá salido del cilindro. Se tiene entonces
+    
+    
+        \begin{equation} \label{eq:2.9} 
+            dE_{\nu} = I_{\nu}  d\nu d\sigma dt d\omega,
+        \end{equation}
+        
+    e igualando con ec.(\ref{eq:2.8})
+ 
+        \begin{equation} \label{eq:2.10} 
+            dE_{\nu} = u_{\nu}(\omega)(dAcdt)d\omega d\nu =  I_{\nu}  d\nu d\sigma dt d\omega. 
+        \end{equation} 
+        
+      
+        
+        EDITAR
+        
+         \begin{wrapfigure}[13]{r}{0.5\linewidth} 
+            \begin{center}                \includegraphics[width=0.6\textwidth]{densidad_energia_cilindro.png}
+                \caption{{\small{Volumen para un cilindro. (Referencia: Radiative Processes in Astrophysics, Rybicki, G., pp 5.)}}}
+                \label{fig:2.2} 
+            \end{center}
+        \end{wrapfigure}
+
+    Así, la contribución a la energía por unidad de volumen por unidad en el rango de frecuencia $(\nu, \nu + d\nu)$ que viene del ángulo sólido $d\omega$ alrededor de la dirección $\Omega$ es
+
+        \begin{equation} \label{eq:2.11} 
+            u_{\nu}(\omega) = \frac{I_{\nu}}{c},
+        \end{equation}
+
+    que integrado sobre todos los ángulos sólidos es 
+
+        \begin{equation} \label{eq:2.12} 
+            u_{\nu}= \int{u_{\nu}(\omega)d\omega} = \frac{1}{c} \int{I_{\nu} d\omega}.
+        \end{equation}
+    
+    
+    Por otra parte, es necesario definir lo que se conoce como la {\textit{intensidad media o intensidad promedio}} $j_{\nu}$
+
+        \begin{equation} \label{eq:2.13} 
+            j_{\nu}= \frac{1}{4\pi} \int{I_{\nu}d\omega}.
+        \end{equation}
+
+    Finalmente, la {\textit{densidad de energía total}}  es obtenida (junto con sus unidades) por integrar $u_{\nu}$ sobre todas las frecuencias 
+
+        \begin{equation} \label{eq:2.14} 
+            u=\int{u_{\nu}d\nu} =  \frac{4\pi}{c} \int{ j_{\nu} d\nu} \hspace{0.4cm} \rightarrow{\mathrm{erg \, cm^{-3}}}.
+        \end{equation}
+        
+\subsection{Presión de Radiación}
+
+    Considerando un cercado reflejante que contiene un campo de radiación isotrópico, cada fotón transfiere el doble de su componente normal de momento en la reflexión, así, de ec. (\ref{eq:2.5})
+
+        \begin{equation} \label{eq:2.15} 
+            p_{\nu} = \frac{2}{c}\int{I_{\nu} \cos^2 \theta d\omega}.
+        \end{equation}
+
+    Por isotropía $I_{\nu} = j_{\nu}$, entonces de ec. (\ref{eq:2.13})
+
+        \begin{equation} \label{eq:2.16} 
+            p_{\nu} = \frac{2}{c}\int{I_{\nu} \cos^2 \theta d\omega} = \frac{2}{c}\int{j_{\nu} \cos^2 \theta d\omega},
+        \end{equation}
+
+        $$p_{\nu}  = \frac{2}{c}\int{j_{\nu} d\nu} \int{\cos^2 \theta d\omega},$$
+    
+    e integrando sobre todas las frecuencias y la parte angular, la presión de radiación es
+
+        \begin{equation} \label{eq:2.17} 
+            p = \frac{1}{3} u.
+        \end{equation}
+
+
+\subsection{Conservación de la Enerdía Radiativa}
+
+    Se refieren en la constancia de la intensidad de un haz. Vamos a considerar un emisor situado en un punto 1, y un receptor en el punto 2, entonces la cantidad de energía que sale de 1 y llega a 2 es 
+
+        $$dE{\nu_1}= I_{\nu1} dA_1 d\omega_1 dt d\nu_1,$$
+
+    con $d\omega_1$ el ángulo sólido que abarca el  receptor 2 visto desde  1.  Igualmente, la cantidad de energía que recibe 2 es 
+    
+        $$dE{\nu_2}= I_{\nu2} dA_ d\omega_2 dt d\nu_2.$$
+        
+        
+        
+        \begin{wrapfigure}[19]{r}{0.5\linewidth}
+                \begin{center}
+                    \includegraphics[width=0.5\textwidth]{fig2_3area1_area2.png}                    \caption{\footnotesize{Constancia de la Intensidad a lo largo de los rayos.}}
+            \label{fig:2.3}
+            \end{center}
+        \end{wrapfigure}
+        
+    Por conservación de la energía $dE{\nu_1}= dE{\nu_2} $. Esto significa que la cantidad de energía emitida dentro del cono de apertura $d\omega_1$ coincide con la captada en el área $dA_2$ y la recibida dentro del cono de apertura $d\omega_2$ coincide con la emitida dentro del área $dA_1$ (ver fig. (\ref{fig:2.3}). De esta manera 
+    
+        $$dA_1d\omega_1 = dA_2d\omega_2 \hspace{0.4cm}\rightarrow{dI_{\nu1} = I_{\nu2}},  $$ 
+
+    Finalmente, $I_{\nu}=cte$, o en su forma diferencial 
+
+        \begin{equation} \label{eq:2.18} 
+            \frac{dI_{\nu}}{ds} = 0.
+        \end{equation}
+    
+    Significa que la intensidad es constante a lo largo de la trayectoria en ausencia de emisores o absorbedor o fuentes de radiación. 
+
+\subsection{Transferencia Radiativa}
+
+    La intensidad específica $I_{\nu}$ no se mantendrá constante cuando un rayo atraviese la materia y sufra procesos de emisión, absorción o dispersión ( {\textit{scattering}}).
+
+    \vspace{0.4cm} 
+
+        \begin{enumerate}
+            \item {\bf{\large{Absorción:}} coeficiente de absorción} $\alpha_{\nu}$
+  
+                Un “lápiz de radiación” que atraviesa un medio se verá debilitado por su interacción con la materia.   Así, si la intensidad específica se convierte en $I_{\nu} + dI_{\nu}$ después de haber atravesado un espesor $ds$ en la dirección de su propagación se tiene 
+
+    
+                    \begin{equation} \label{eq:2.19} 
+                        dI_{\nu} = - \kappa_{\nu} \rho I_{\nu} ds,
+                    \end{equation}   
+        
+        
+                siendo $\rho$ la densidad del material y $\kappa_{\nu}$, en unidades de ${\mathrm{cm^{2}\, g^{-1}}}$, el {\textit{coeficiente de absorción de masa}} para la radiación de frecuencia $\nu$. También recibe el nombre de {\textit{coeficiente de opacidad}} y en ocasiones es definido como $\alpha_{\nu} = \kappa_{\nu} \rho$, con $\alpha_{\nu}$ en unidades de ${\mathrm{cm^{-1}}}$. 
+                \medskip
+  
+                No debe ser asumido que la reducción en la intensidad que experimenta un lápiz de radiación al atravesar la materia se pierde necesariamente en el campo de radiación.  Puede ser que una parte de la energía perdida del lápiz incidente pueda reaparecer en otras direcciones como radiación dispersada y que otra parte haya sido “verdaderamente” absorbida en el sentido que representa la transformación de la radiación en otras formas de energía (incluso en radiación de otras frecuencias). 
+        
+                \vspace{0.6cm}
+
+            \item {\bf{\large{Emisión:}} coeficiente de emisión} $j$
+    
+                El {\textit{coeficiente de emisión espontánea}} $j$ es definida como la energía emitida por unidad de tiempo por unidad de ángulo sólido y por unidad de volumen 
+    
+                \begin{equation} \label{eq:2.20}
+                    dE=jdVd\omega dt,
+                \end{equation}
+                
+                
+                Un {\textit{coeficiente de emisión monocromático}} es igualmente definido como 
+    
+                \begin{equation} \label{eq:2.21}
+                    dE_{\nu}=j_{\nu}dVd\omega dt d\nu,
+                \end{equation}
+    
+            donde $j_{\nu}$ tiene unidades de $\mathrm{erg \, cm^{-3} \, ster^{-1} s^{-1} Hz^{-1}}$. El coeficiente de emisión depende de la dirección en la cual la emisión toma lugar. Para un emisor isotrópico o para una distribución de emisores aleatoriamente orientados 
+            
+            
+                \begin{equation} \label{eq:2.22}
+                    j_{\nu} = \frac{1}{4\pi } P_{\nu},
+                \end{equation}
+    
+            con $P_{\nu}$ la potencia radiada por unidad de volumen por unidad de frecuencia. Algunas veces la emisión espontánea es definida como la {\textit{emisividad}} $\epsilon_{\nu}$  (ángulo integrado) definida como energía emitida espontáneamente por unidad de frecuencia por unidad de tiempo por unidad de masa en unidades de $\mathrm{erg \,Hz^{-1} s^{-1} g^{-1}}$. Si la emisión es isotrópica 
+            
+                \begin{equation} \label{eq:2.23}
+                    dE_{\nu}=\epsilon_{\nu} \, \rho \,dVdt d\nu \frac{d\omega }{4\pi},
+                \end{equation}
+
+            donde $\rho$ es la masa del medio emisor y $\frac{d\omega }{4\pi}$ considera la fracción de energía radiada en $d\omega$. Igualando la ec. (\ref{eq:2.21}) con (\ref{eq:2.22}) obtenemos la relación entre la emisividad $\epsilon_{\nu}$  y el coeficiente de emisión
+            espontánea $j_{\nu}$
+    
+                \begin{equation} \label{eq:2.24}
+                    j_{\nu} =   \frac{\epsilon_{\nu}\rho }{4\pi}. 
+                \end{equation}
+    
+            Al recorrer una distancia $ds$, un haz de sección transversal $d\sigma$ viaja a través de un volumen $dV=d\sigma ds$. Así, la intensidad agregada al haz por emisión espontánea es
+    
+            \begin{equation} \label{eq:2.25}
+                dI_{\nu} = j_{\nu} ds.
+            \end{equation}
+    
+    
+        
+        \end{enumerate}
+        
+        
+\subsection{Ecuación de Transferencia Radiativa}
+
+    La conservación de la energía en un haz que se propaga desde el punto 1 al punto 2 implica  $I_{\nu1} = I_{\nu2}$, lo cual es generalizada a través de la ec. (\ref{eq:2.18}). Ahora, al considerar la interacción de la radiación con el medio, deja de cumplirse la conservación de energía radiativa y se tiene la {\textit{ecuación de transferencia radiativa}},  la cual incluye los efectos de absorción  y emisión (una única ecuación que da la variación de la intensidad a lo largo de un rayo. Así, de las ecs. (\ref{eq:2.19}) y (\ref{eq:2.25}) se obtiene
+
+        \begin{equation} \label{eq:2.26} 
+            \frac{dI_{\nu}}{ds} = -\alpha_{\nu} I_{\nu} + j_{\nu},  
+        \end{equation}
+ 
+    la cual proporciona una gran herramienta para resolver la intensidad en un medio que emite o absorbe. Incorpora además aspectos macroscópicos de la radiación que los relaciona con el coeficiente de absorción y emisión.
+    
+    Conocidos los coeficientes  $\alpha_{\nu}$ y $ j_{\nu}$  es relativamente sencillo resolver la ec. (\ref{eq:2.26}). Vamos a considerar el caso de ``solo absorción'' y de ``solo emisión''. 
+    
+    \vspace{0.5cm}
+ 
+        \begin{enumerate}
+            \item {\bf{\large{Solo absorción:}}} $ j_{\nu}=0$
+     
+                Siendo $\alpha_{\nu} = \kappa_{\nu} \rho$,
+     
+                    \begin{equation} \label{eq:2.27}
+                        \frac{dI_{\nu}}{ds} = -\alpha_{\nu}I_{\nu}.
+                    \end{equation}
+
+     
+                Con solución:
+            
+                    \begin{equation} \label{eq:2.28}
+                        I_{\nu}(s) = I_{\nu}(s_0) e^{-\int_{s_0}^s{\alpha_{\nu}(s')ds'}}. 
+                    \end{equation}
+     
+                Así, el brillo decrece a lo largo del rayo por la exponencial del coeficiente de absorción integrado a lo largo de la línea de visión.
+            
+            
+                \vspace{0.5cm}
+     
+            \item {\bf{\large{Solo emisión:}}} $ \alpha_{\nu}=0$.
+    
+                Por lo tanto:
+    
+                    \begin{equation} \label{eq:2.29}
+                        \frac{dI_{\nu}}{ds} =  j_{\nu}. 
+                    \end{equation}
+                    
+                    
+                Con solución 
+      
+                    \begin{equation} \label{eq:1.30}
+                        I_{\nu}(s) = I_{\nu}(s_0) + \int_{s_0}^s{j_{\nu}(s')ds'}.
+                    \end{equation}
+
+                El incremento de brillo es igual al coeficiente de emisión integrado a lo largo de la línea de visión. $s$ es el camino ??
+    
+        \end{enumerate}
+    
+\subsection{Profundidad Óptica y Función Fuente}
+
+    La ecuación de transferencia (\ref{eq:2.26})  puede tomar una forma más simple si en vez de usar $s$ se utiliza una cantidad conocida como {\textit{profundidad óptica}}, la cual introduce menos incertidumbres en estimar distancias y tamaños de objetos astrofísicos. Se define como $d\tau_{\nu} = \alpha_{\nu} ds$ o
+
+        \begin{equation} \label{eq:2.31}
+            \tau_{\nu} = \int_{s_0}^s{\alpha_{\nu}(s') ds'}.
+        \end{equation}
+    
+    
+    
+	ve en la figura \ref{fig:supraini}, ocurre en el sistema un potencial de acción, antes de regresar a el punto de equilibrio
+	este comportamiento es una respuesta típica en los sistema del tipo reposo-excitable. Por otro lado si la perturbación ubica
+	a las variables de estado en el lado izquierdo del nullcline de $x$, el sistema regresa rápidamente a su estado de reposo lo
+	cual se observa en la figura \ref{fig:subini}.
+	\begin{figure}[h]
+		\centering
+    	\begin{subfigure}{\textwidth}
+    		\begin{subfigure}{0.5\textwidth}
+    		    \includegraphics[width=\textwidth]{imagenes/null.pdf}
+        		\refstepcounter{subfigure}\label{fig:nullcines}
+    		\end{subfigure}
+    		\begin{subfigure}{0.5\textwidth}
+    		    \includegraphics[width=\textwidth]{imagenes/nullsub.pdf}
+        		\refstepcounter{subfigure}\label{fig:subini}
+    		\end{subfigure}    		
+    	\end{subfigure}
+    		\begin{subfigure}{0.5\textwidth}
+    		    \includegraphics[width=\textwidth]{imagenes/nullsupra.pdf}
+        		\refstepcounter{subfigure}\label{fig:supraini}
+    		\end{subfigure}    	
+		\caption{En (a) se tienen representados lo nullclines del modelo de Chialvo para $a = 0\text{.}89 , b = 0\text{.}6 ,c = 0\text{.}28 ,k = 0\text{.}02$,junto con una respuesta ante una perturbación a la izquierda del nullcline de $x$ en (b) y a la derecha en (c)}
+		\label{fig:nullinitial}
+	\end{figure}
+	Es evidente que una respuesta donde se observe un potencial de acción o no, depende de la magnitud de la perturbación. En el
+	caso de una recuperación normal, luego de la perturbación, la trayectoria de las variables de estado se acerca de manera
+	monótona al punto de equilibrio. Sin embargo se debe hacer la distinción en el caso de una recuperación supernormal de la
+	excitabilidad, la cual corresponde a una aproximación oscilatoria hasta el punto de equilibrio. En el modelo de Chialvo este
+	comportamiento se puede observar para $k > 0.02$. Por ejemplo la figura \ref{fig:supernitial} muestra la evolución del sistema
+	para $k=0\text{.}29$ que corresponde a que el punto de equilibrio es ahora un foco, como se ve en la figura \ref{fig:superfase}
+	en donde las trayectorias del sistema se acercan al punto de equilibrio en espiral, en la figura \ref{fig:superx} se tiene la
+	evolución temporal de la variable de estado $x$ ante la aplicación de una perturbación de magnitud $\varepsilon = 0.015$, en
+	las iteraciones $t=2,40,60\text{ y }80$. Aunque todas debieran tener una respuesta sin potencial de acción , se ve que para el
+	caso de la iteración en $t=60$ ocurre un potencial de acción. Esto se debe a que esta perturbación fue aplicada cuando ocurre
+	una pequeña oscilación en la variable estado $x$.
+
+        \begin{figure}[h]
+        \centering
+            \begin{subfigure}{\textwidth}
+             	\begin{subfigure}{0.5\textwidth}
+                		\includegraphics[width=\textwidth]{imagenes/superX.pdf}
+                		\refstepcounter{subfigure}\label{fig:superx}
+                 \end{subfigure}
+                 \begin{subfigure}{0.5\textwidth}
+                		\includegraphics[width=\textwidth]{imagenes/nullsuper.pdf}
+                		\refstepcounter{subfigure}\label{fig:superfase}
+            		\end{subfigure}           
+            \end{subfigure}   
+        \caption{En (a), se puede observar que para la iteración $t=60$, ocurre el potencial de acción. Y en (b) se ve que esto ocurre, debido a que la iteración $t=60$ se movió para posicionarse por encima del umbral, aunque se le haya aplicado una perturbación de la misma intensidad.}
+        \label{fig:supernitial}
+    \end{figure}
+	Para un incremento aun mayor del parámetro $k$, por ejemplo $k=0\text{.}03$, coexisten dos comportamientos en el espacio de
+	fases, un foco estable y un ciclo límite. Que las trayectorias converjan a alguno de los dos atractores depende de las 
+	condiciones iniciales. En la figura \ref{fig:osci}, se puede ver que debido a que estos dos comportamientos coexisten, 
+	es posible un cambio entre estas dos soluciones, se aplica una perturbación sacando a las variables de estado del dominio de
+	atracción del ciclo límite y llevándolas al dominio de atracción del foco, fenómeno que es llamado “Aniquiliacion”, y se ha
+	visto en varios experimentos:  En los axones de un calamar gigante, los modelos de lo nervios y células cardiacas
+	\cite{best1979null,kraepelin1981winfree}.
+    \begin{figure}[h]
+        \centering
+        \begin{subfigure}{\textwidth}
+            \begin{subfigure}{0.5\textwidth}
+                \includegraphics[width=\textwidth]{imagenes/autoX.pdf}
+                \refstepcounter{subfigure}\label{fig:autoX}
+            \end{subfigure}
+            \begin{subfigure}{0.5\textwidth}
+                \includegraphics[width=\textwidth]{imagenes/autoY.pdf}
+                \refstepcounter{subfigure}\label{fig:autoY}
+            \end{subfigure}           
+        \end{subfigure}
+            \begin{subfigure}{0.5\textwidth}
+                \includegraphics[width=\textwidth]{imagenes/autoXY.pdf}
+                \refstepcounter{subfigure}\label{fig:nullauto}
+            \end{subfigure}       
+        \caption{En las figuras (a) y (b), se tiene la evolución temporal de las variables de estado $x$ y $y$ respectivamente,  y en (c) el espacio de estados juntos con los nullclines, con la aplicación de una perturbación $\varepsilon = 0\text{.}02$ en la iteración $t=580$, se puede ver la aniquilación del comportamiento oscilatorio}
+        \label{fig:osci}
+    \end{figure}
+    Por ultimo cambiando el parámetro de dependencia de activación de la variable de recuperación a $b=0\text{.}18$, las
+    oscilaciones vistas en la figura \ref{fig:osci} se convierten en ráfagas de disparos aperiódicas, como se ve en la figura
+    \ref{fig:chaososci}. Este comportamiento ha sido estudiado en las redes neuronales, y se ha relacionado con el cambio de entre
+    distintas actividades cognitivas\citep{rabinovich1998role}.
+        \begin{figure}[h]
+        \centering
+        \begin{subfigure}{\textwidth}
+            \begin{subfigure}{0.5\textwidth}
+                \includegraphics[width=\textwidth]{imagenes/chaosX.pdf}
+                \refstepcounter{subfigure}\label{fig:chaosX}
+            \end{subfigure}
+            \begin{subfigure}{0.5\textwidth}
+                \includegraphics[width=\textwidth]{imagenes/chaosY.pdf}
+                \refstepcounter{subfigure}\label{fig:chaosY}
+            \end{subfigure}           
+        \end{subfigure}
+            \begin{subfigure}{0.5\textwidth}
+                \includegraphics[width=\textwidth]{imagenes/chaosXY.pdf}
+                \refstepcounter{subfigure}\label{fig:nullchaos}
+            \end{subfigure}       
+        \caption{En las figuras (a) y (b), se tiene la evolución temporal de las variables de estado $x$ y $y$ respectivamente,  y en (c) el espacio de estados juntos con las nullclines, se observa la presencia de un atractor extraño alrededor de la intersección de las nullclines del sistema}
+        \label{fig:chaososci}
+    \end{figure}
+    
+\section{Sincronización}
+    La sincronización es un fenómeno colectivo que se presenta cuando un grupo de osciladores que interactúan de alguna manera
+    entre ellos, presentan un ajuste de sus ritmos de oscilación\cite{Pikovsky2001}.
+
+    Un oscilador un sistema que posee una fuente de energía interna, la cual se transforma en un movimiento oscilatorio. Mientras
+    éste permanezca aislado, mantiene un ritmo constante hasta que su fuente de energía interna expira, en la izquierda de la 
+    figura \ref{fig:tofo} se observa la evolución temporal de un comportamiento de este tipo y a la derecha un movimiento
+    oscilatorio en el cual la fuente de energía interna del sistema nunca expira. La forma de las oscilaciones depende únicamente
+    de los parámetros intrínsecos del sistema y no de la manera en que éste fue puesto en marcha. Por otra parte, las
+    oscilaciones al ser sometidas a alguna perturbación con el transcurso del tiempo regresan a su forma original.
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\linewidth]{imagenes/Tofos.jpg}
+        \caption{A la izquierda un ejemplo de oscilaciones en las cuales su fuente de energía interna expira y a la derecha con una fuente de energía interna infinita}
+        \label{fig:tofo}
+    \end{figure}
+   
+    Los ritmos que poseen los osciladores pueden tener distintas formas, se pueden representar desde una simple onda sinusoidal,
+    hasta una secuencia de disparos continuos. La cuantificación de éste depende de su forma, por ejemplo, en el caso de la onda
+    sinusoidal se puede medir a través de un período o una frecuencia.
+   
+    Se dice que hay un ajuste de ritmos entre un grupo de osciladores ocurre cuando estos presentan la misma frecuencia de
+    oscilación. Sí esto ocurre o no, depende de dos factores: el primero es la fuerza del acoplamiento; la cual representa qué
+    tan fuertes son las  interacciones de los elementos, es decir, determinar qué tanta influencia puede desarrollar un elemento
+    sobre otro; el segundo factor tiene que ver con la capacidad de medir qué tan diferentes son las frecuencias de oscilación que
+    presentan al estar aislados.
+   
+
+\section{Redes}
+
+    Una red es un conjunto de objetos conectados. Normalmente se refiere a los objetos como nodos o vértices, y se representan
+    generalmente como puntos. Y a las conexiones entre los nodos usualmente se le dicen arcos, estos pueden ser, simples y estar
+    representados mediante una linea; pueden ser dirigidos y estar representados mediante una flecha que indica la dirección
+    de la conexión y para ambos caso estos pueden tener una ponderación que representa la fuerza de la relación que tiene los
+    elementos de la red. Las redes se ven representadas de manera matemática mediante el uso de grafos. Las redes pueden
+    representar distintos tipos de sistemas , por ejemplo, la red de Internet, en donde las computadoras serían los nodos y los
+    arcos serian la conexión física o inalámbrica entre ellos.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\linewidth]{imagenes/grafo2.png}
+    \caption{Grafo que representa una red de 7 nodos con sus respectivos arcos}
+    \label{fig:redejemplo}
+\end{figure}
+
+   Una manera de representar los arcos que conectan los nodos de una red, es por medio de una matriz de adyacencia $W$ que es cuadrada y donde cada uno de sus campos $W_{ij}$ representa la fuerza de la interacción del nodo $i$ sobre el nodo $j$. Para la red representada por la figura \ref{fig:redejemplo}, la matriz de adyacencia es:
+\begin{equation}
+    W = \bordermatrix{~ & 1 & 2 & 3 & 4 & 5 & 6 & 7 \cr
+                       1 & 0 & 3 & 6 & 0 & 0 & 0 & 0 \cr
+                       2 & 3 & 0 & 0 & 1 & 0 & 0 & 0 \cr
+                       3 & 6 & 2 & 0 & 4 & 2 & 0 & 0 \cr
+                       4 & 0 & 1 & 4 & 0 & 6 & 0 & 0 \cr
+                       5 & 0 & 0 & 2 & 0 & 0 & 2 & 2 \cr
+                       6 & 0 & 0 & 0 & 0 & 2 & 0 & 3 \cr
+                      7 & 0 & 0 & 0 & 0 & 2 & 3 & 0 \cr}
+\end{equation}
+
+   
+\section{Redes de mapas acoplados} \label{sec:RMA}
+	Las redes neuronales son sistemas complejos, es decir, sistemas compuestos de múltiples elementos no lineales que interactúan
+	entre si. Para estudiar estos sistemas dinámicos no lineales, se puede construir un modelo rico y complejo mediante el
+	acoplamiento de un gran numero de sistemas dinámicos de orden bajo. Además, estos pueden simplificarse aun mas considerándolos
+	discretos en tiempo y espacio. Las Redes de mapas acoplados ( RMA ) o Coupled Map Lattices ( CML ) están constituidas por un
+	conjunto de elementos, los cuales poseen un espectro continuo que evoluciona según un mapa, y viene escrita de manera general
+	de la siguiente forma:
+    \begin{equation}\label{globalRMA}
+        x_{t+1}^i = f(x_{t}^i) + g(V_{t}^{i}) \; ,
+    \end{equation}
+    donde, $x_{t}^i$ es la variable de estado del nodo o celda $i$ en tiempo discreto $t$, $i = 1,...,N$ es el  índice que
+    identifica cada uno de los N elementos de la red, $f(x_{t}^i)$; es una función que representa la dinámica local del nodo
+    y el término $g(V_{t}^{i})$, es una función que determina la influencia o la interacción que tiene sobre el elemento $i$-esimo
+    el conjunto de sus vecinos $V_{t}^{i}$.
+	
+	Uno de los criterios usados para determinar si los elementos de la red de mapas acoplados se encuentran sincronizados consiste
+	en medir si los elementos de la red exhiben órbitas iguales mientras el tiempo transcurre, esto es:
+    \begin{equation}
+        |x_{t}^i - x_{t}^i| < \varepsilon \forall i,j, t \rightarrow \infty \; ,
+    \end{equation}
+    donde $\varepsilon$ es un valor positivo arbitrariamente pequeño, esta definición es válida para órbitas caóticas y periódicas.
+
+\section{Plasticidad del sistema nervioso}
+    El término plasticidad corresponde a la capacidad que tiene algún objeto de cambiar de forma y conservarla durante un período
+    de tiempo determinado: en cuanto al campo de estudio de este trabajo, se habla de la Neuroplasticidad; que es la propiedad que
+    emerge de la naturaleza y funcionamiento de las neuronas cuando éstas establecen una comunicación o sinápsis. Esta dinámica
+    deja una huella al tiempo que modifica la eficacia de la transferencia de la información entre las neuronas, es decir, sus
+    patrones de conexión sináptico cambian modificando las rutas de interconexión. Este fenómeno está relacionado con la memoria y
+    los procesos de aprendizaje.
+    
+    Una teoría que explora como ocurre la neuroplasticidad es la teoría hebbiana que establece que el valor de una conexión
+    sináptica se incrementa si las neuronas de ambos lados de dicha sinápsis se activan repetidas veces de forma simultánea,
+    de forma tal que en un futuro no dependerán únicamente de su propia estimulación, sino también, de la activación de las
+    neuronas vecinas con la sinápsis incrementada. De esta manera forman una red Hebbiana, para que la plasticidad neuronal sea
+    posible también debe existir el fenómeno inverso, es decir, que si una conexión en una red Hebbiana no se usa, debe ir
+    perdiendo sus componentes hasta desaparecer, es decir que las neuronas se vayan desconectando unas de otras. Es importante
+    destacar, que esta teoría sólo corresponde a una representación de una simplificación del sistema nervioso, por tanto no debe
+    tomarse literalmente. Sin embargo este proceso de plasticidad es el que hace al sistema nervioso tan excepcional 
+    proporcionándole, su maleabilidad y capacidad de cambio. Esta teoría es comúnmente usada para explicar algunos tipos de
+    aprendizaje asociativos, en donde la activación simultanea de las neuronas conduce a un pronunciado aumento de la fuerza
+    sináptica. Este aprendizaje se conoce como aprendizaje de Hebb\cite{Grabner2014}.
+	
+	En los nodos de la red Hebbiana están las neuronas que son células del sistema nervioso. El cerebro humano contiene mas de 50
+	billones de neuronas. Del cuerpo de cada neurona se desprenden el axón y las dendritas que son elementos fundamentales en la
+	transmisión nerviosa. El axón es una fibra nerviosa única que surge del cuerpo neuronal y transmite información desde el cuerpo 
+	de la neurona hasta su extremo donde se producen las neurotransmisiones que provocan las sinápsis que van a las dendritas de
+	las neuronas vecinas.
+	
+    La comunicación de ordenes y mensajes entre las neuronas y las estructuras neuronales como también los órganos del cuerpo, se
+    le denomina neurotransmisión, y sólo puede llevarse acabo a través de los neurotransmisores. Los neurotransmisores son
+    sustancias  neuro químicas, que actúan como mensajeros, siendo liberada por las terminales del axón neuronal en el espacio
+    sinpático. Ellos se unen a los puntos de recepción de las neuronas receptoras acomplándoce a las dendritas del receptor, lo
+    cual permite que los iones penetren en la neurona receptora excitándola o inhibiéndola
+
+    La sinapsis es el fenómeno de interacción o comunicación entre dos neuronas que ocurre en una zona determinada (Espacio
+    sináptico). Su actividad explica todas las acciones del cerebro, desde las más sencillas; como ordenarle a los músculos su
+    contracción, hasta las tareas más complejas, como las que originan y controlan nuestras emociones.
+
+	En el siguiente cápitulo se muestra como están representados matemáticamente todos los elementos anteriormente expuestos, 
+	como también su respectiva estructura e implementación de los modelos que analiza este trabajo de grado.

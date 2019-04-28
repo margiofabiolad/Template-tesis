@@ -1,0 +1,359 @@
+\chapter{Diseño e implementación del modelo}
+	Para el estudio numérico de un sistema complejo, y en particular de una red neuronal,  es esencial hacer una simplificación de la misma construyendo un modelo compuesto por elementos con dinámica local capaces de interactuar entre sí. Para hacer esto es importante tener un modelo matemático simple con una dinámica que exhiba las propiedades más importantes de cada elemento del sistema, en nuestro caso la neurona; un número pequeño de parámetros que tengan un sentido físico; y que el fenómeno que se quiere estudiar emerja en dicho modelo. Esta manera de proceder corresponde al modelado constructivista propuesto por Ito y Kaneko\citep{Kaneko1990}.
+	
+	Este trabajo de grado continua la investigación de Kaneko\citep{kaneko1993theory}, donde se propone una manera 
+	eficiente de estudiar estos sistemas dinámicos mediante redes de mapas acoplados (RMA); según Kaneko los pasos para modelar un sistema dinámico usando RMA son dos. En primer lugar hay que  describir las unidades como dinámicas simples y paralelas, es decir, el estado de cada unidad está determinado por un mapa, en donde intervienen todas las unidades con las que interactúa. El segundo paso consiste en resolver la dinámica de la red, iterando cada uno de los mapas que la conforman.
+	
+    
+    En la red neuronal del cerebro se encuentra presente la sincronización, fenómeno muy importante
+    en  diversas funciones, tales como el aprendizaje\citep{Singer1993} y los procesos verbales
+    \citep{bastiaansen2006} y cognitivos\citep{varela1994resonant}. También la sincronización está relacionada 
+    con patologías o enfermedades 
+    de origen neurológico como lo es la esquizofrenia paranoide\citep{Alvarez-Silva2010,ford2007neural} y ataques 
+    convulsivos propios  de la epilepsia\citep{uhlhaas2006neural}.
+   
+    Con el objetivo de estudiar el fenómeno de sincronización en redes neuronales se crea un modelo mediante una red
+    de mapas acoplados con dinámica caótica excitable a la cual se le aplican perturbaciones externas con la
+    finalidad de mantenerlas desincronizadas.
+    
+    Nuestro modelo base, sin perturbaciones, lo conforma la red de mapas acoplados con enlaces ponderados, compuesta por $N$ osciladores caóticos excitables que representan a las neuronas y que siguen la dinámica propuesta por Chialvo y presentada en la sección \ref{model:chialvo}, todos ellos acoplados mediante una matriz de adyacencia $W$ cuyos elementos representan las sinápsis. 
+    
+    La dinámica de los estados viene dada por
+    \begin{equation}\label{eq:elemento}
+    \begin{aligned}
+ x_{t+1}^i &= (1-\epsilon)[(y_{t}^{i})^2 e^{y_{t}^{i}-x_{t}^{i}} + k] + \epsilon \sum_{j} w_{t}^{ij}[(y_{t}^{j})^2 e^{y_{t}^{j}-x_{t}^{j}} + k] \\
+y_{t+1}^i &= ay_{t}^i - bx_{t}^i + c 
+\end{aligned} \; ,
+    \end{equation}
+    donde $x_{t}^i \text{ y } y_{t}^i$ representan las variables de estado de la neurona $i$ en el instante $t$, los parámetros de la
+    dinámica local de las neuronas se fijan en $a~=~ 0\text{.}89 \text{ , }b~=~ 0\text{.}18 \text{ , }$ $c~=~0\text{.}28 \text{ y } k~=~0\text{.}03$ para que ésta cumpla con las condiciones deseadas de ser caótica y excitable; $\epsilon \in (0,1)$ es un parámetro que controla la intensidad 
+    de la fuerza de acoplamiento; y $w_{t}^{ij}$ es el elemento $ij$ de la matriz de adyacencia $W$ que representa el peso que va de la neurona $j$ a la neurona $i$ en el instante $t$, cuya evolución a su vez viene dada por
+    \begin{equation}\label{eq:pesos1}
+		w_{t+1}^{ij} = \frac{[1 + \delta g(x_{t}^i ,x_{t}^j)]w_{t}^{ij}}{\sum_{j}[1 + \delta g(x_{t}^i ,x_{t}^j)]w_{t}^{ij}} \; ,
+    \end{equation}
+    donde $\delta \in (0,1)$ representa el grado de plasticidad de la red, y el denominador de la expresión actúa como normalizador de los pesos para que así estos se mantengan entre $0$ y $1$. Este mecanismo se conoce como 
+    plasticidad homeoestática y se refiere al proceso de mantener la estabilidad 
+    en las funciones neuronales \citep{Alvarez-Silva2006}. La función $g( x^i , x^j )$ representa una regla de aprendizaje para la red neuronal del tipo Hebbiano la cual viene dada por
+        \begin{equation}
+     g( x^i , x^j ) = \left\{
+           \begin{array}{lll}
+         \cos (\frac{|x^j - x^i|}{\Omega})	& \mathrm{si\ } |x^j - x^i| \leq 4 & \mathrm{para\ } \Omega = 1\text{.}25 	\\
+         0    & \mathrm{en \ otros \ casos}\\
+           \end{array}
+         \right. \; .
+   \end{equation}
+   	La figura \ref{fig:cos}  muestra el comportamiento de la función $g( x^i , x^j )$ para $\Omega = 1\text{.}25$ que abarca la 
+   	diferencia máxima de la variable de activación del modelo de Chialvo en régimen
+   	caótico como se ve en la figura \ref{fig:chialvocos}. Cuando la diferencia $|x^j - x^i| \leq 2$ el peso del enlace de la 
+   	neurona $j$ a la neurona $i$ aumenta y cuando $|x^j - x^i| > 2$ este disminuye.
+   	    \begin{figure}[h]
+        \centering
+        \begin{subfigure}{\textwidth}
+            \begin{subfigure}{0.5\textwidth}
+                \includegraphics[width=\textwidth]{imagenes/cos.pdf}
+                \refstepcounter{subfigure}\label{fig:cos}
+            \end{subfigure}
+            \begin{subfigure}{0.5\textwidth}
+                \includegraphics[width=\textwidth]{imagenes/chaoscos.pdf}
+                \refstepcounter{subfigure}\label{fig:chialvocos}
+            \end{subfigure}
+        \end{subfigure}
+        \caption{(a) Función que representa el aprendizaje hebbiano; donde $\Omega$ es el parámetro que permite la compresión o expansión de la función, en este caso entre 0 y 4.(b) Evolución de la variable de activación del modelo de Chialvo en régimen caótico.}
+        \label{fig:Heebiano}
+    \end{figure}
+\section{Sincronización y desincronización}
+   
+	Para las simulaciones se estableció una red de N = 1000 osciladores caóticos con condiciones iniciales aleatorias uniformemente
+	distribuidas para las variables de estado $x^{i} \ \in (0\text{.}1\text{,}5\text{.}0)$ y $y^{i} \ \in (0\text{.}8\text{,}2\text{.}3)$ que como se observo en la figura \ref{fig:chaososci} abarca el rango de valores posible de estos, con un valor inicial de $ w^{ij} = \frac{1}{N-1}$ si $i \neq j$ y $w^{ii} = 0$ para todo $i$
+	
+	La figura \ref{fig:estados12} muestra la evolución temporal de la variable de activación $x_{t}^{i}$ de $10$ elementos de la red. Estableciendo un valor para el grado de plasticidad $\delta = 0\text{.}5$, nótese que  para los dos valores de la intensidad de acoplamiento de los elementos $\epsilon$ se observa un estado sincronizado cuando $\epsilon = 0\text{.}25$ figura \ref{fig:estados1}, mientras que cuando $\epsilon = 0\text{.}15$ el sistema no está sincronizado \ \ref{fig:estados2}.
+	       \begin{figure}[h]
+        \centering
+        \begin{subfigure}{\textwidth}
+            \begin{subfigure}{0.5\textwidth}
+                \includegraphics[width=\textwidth]{imagenes/sinX.pdf}
+                \refstepcounter{subfigure}\label{fig:estados1}
+            \end{subfigure}
+            \begin{subfigure}{0.5\textwidth}
+                \includegraphics[width=\textwidth]{imagenes/desinX.pdf}
+                \refstepcounter{subfigure}\label{fig:estados2}
+            \end{subfigure}
+        \end{subfigure}
+        \caption{Evolución temporal de la variable de activación $x_{t}^i$ para 10 elementos de la red en con $\delta = 0\text{.}5$ y dos valores para la intensidad de acoplamiento $\epsilon$. a) $\epsilon = 0\text{.}25$ b) $\epsilon = 0\text{.}15$}
+        \label{fig:estados12}
+        \end{figure}
+        
+	De esta manera queda evidenciado que el estado de sincronización de los elementos de la red depende de la intensidad de acoplamiento entre los elementos $\epsilon$. Con el fin de cuantificar al estado sincronizado en la red de mapas acoplados, se calcula la varianza instantánea de los estados de los elementos del sistema que viene dada por
+    \begin{equation}
+        \sigma_{t}^2 = \frac{1}{N-1} \sum_{i=1}^N ([x_{t}(i) - \left\langle x_{t} \right\rangle]^2 + [y_{t}(i) - \left\langle y_{t} \right\rangle]^2) \; ,
+    \end{equation}
+    donde $\left\langle x_{t} \right\rangle$ y  $\left\langle y_{t} \right\rangle$ son los promedios instantáneos de las variables de estado de los $N$ elementos de la red en la iteración $t$. 
+    
+    En la figura \ref{fig:desv12} se muestra la evolución temporal de la varianza instantánea en escala logarítmica de los elementos de la red para  dos valores del parámetro $\epsilon$. A la izquierda, figura \ref{fig:desv1}, con $\epsilon = 0\text{.}25$ se puede observar que la varianza instantánea alcanza valores en el orden de $10^{-10}$ para $t > 50$  por lo tanto se dice que la red está en un estado de sincronización. En cambio para $\epsilon = 0\text{.}15$ se tiene que la red está desincronizada como lo muestra la figura \ref{fig:desv2} donde se nota que el valor de la varianza instantánea se mantiene oscilando para valores entre $10^{-1\text{.}5}$ y $10^{1\text{.}5}$ en $t > 150$. Debido a este último comportamiento oscilatorio calculamos la varianza promediada en el tiempo.
+    \begin{equation}
+        \sigma^2 = \frac{1}{T_{f}-T_{o}} \sum_{t=T_{o}}^{T_{f}} \sigma_{t}^2  \; ,
+    \end{equation}
+    donde $T_{o}$ define el inicio del intervalo de tiempo en el cual sera promediada $ \sigma_{t}^{2}$ y $T_{f}$  el instante final. De esta manera se puede cuantificar que la red este en un estado de sincronización, $\sigma^2 \simeq 0$ o de desincronizacion en caso contrario.        	
+	\begin{figure}[h]
+        \centering
+        \begin{subfigure}{\textwidth}
+            \begin{subfigure}{0.5\textwidth}
+                \includegraphics[width=\textwidth]{imagenes/dev.pdf}
+                \refstepcounter{subfigure}\label{fig:desv1}
+            \end{subfigure}
+            \begin{subfigure}{0.5\textwidth}
+                \includegraphics[width=\textwidth]{imagenes/dev2.pdf}
+                \refstepcounter{subfigure}\label{fig:desv2}
+            \end{subfigure}
+        \end{subfigure}
+        \caption{Logaritmo de la varianza instantánea de la red para $\delta = 0\text{.}5$ y dos valores distintos de la intensidad de acoplamiento. a) $\epsilon = 0\text{.}25$ b) $\epsilon = 0\text{.}15$.}
+        \label{fig:desv12}
+        \end{figure}		
+    Además para saber si el estado sincronizado es absorbente se pide que la red haya alcanzado alguna
+    estructura estable en sus conexiones, esto quiere decir que su matriz de pesos no presente cambios posteriores y
+    asegurar así que la red se encuentra en estado asintótico. Para esto se calcula la actividad instantánea de la matriz de pesos, que viene dada por
+    \begin{equation}
+        A_t = \frac{1}{(N - 1)^2} \sum_{i \neq j }  | w_{t}^{ij} - w_{t-1}^{ij} |  \; ,
+    \end{equation}
+    que busca representar el cambio promedio de la conexiones en un instante de tiempo. La figura \ref{fig:A12} muestra la actividad instantánea $A_{t}$ para una red con $\delta = 0\text{.}5$ y dos valores de $\epsilon$. A la izquierda, en la figura \ref{fig:A1} con $\epsilon = 0\text{.}25$, la red alcanza un estado de sincronización el valor de la actividad en la matriz de adyacencia de la red alcanza un valor de $A < 10^{-20}$, mientras que con $\epsilon = 0\text{.}15$, figura \ref{fig:A2}, cuando la red se encuentra desincronizada la actividad $A$ tiene un valor en el orden de $10^{-12}$. En ambos casos los valores obtenidos de la actividad son relativamente pequeños por lo que se considera que la red a alcanzado una estructura estable, sin embargo, nótese que la actividad tiene un mayor valor cuando la red se encuentra en estado desincronizado. De igual manera que la varianza de los estados del sistema la actividad instantánea también es promediada en el tiempo entre un valor $T_o$ inicial y un valor final $T_f$.
+    \begin{equation}
+        A = \frac{1}{T_{f} - T_{o}} \sum_{i \neq j } A_t \; ,
+    \end{equation}	
+		\begin{figure}[h]
+        \centering
+        \begin{subfigure}{\textwidth}
+            \begin{subfigure}{0.5\textwidth}
+                \includegraphics[width=\textwidth]{imagenes/At.pdf}
+                \refstepcounter{subfigure}\label{fig:A1}
+            \end{subfigure}
+            \begin{subfigure}{0.5\textwidth}
+                \includegraphics[width=\textwidth]{imagenes/At2.pdf}
+                \refstepcounter{subfigure}\label{fig:A2}
+            \end{subfigure}
+        \end{subfigure}
+        \caption{Evolución temporal del logaritmo de la actividad instantánea en la matriz de adyacencia de la red $A_{t}$ con $\delta = 0\text{.}5 $ y para dos valores de la intensidad de acoplamiento $\epsilon$. a) $\epsilon = 0\text{.}25$ b) $\epsilon = 0\text{.}15$,}
+        \label{fig:A12}
+        \end{figure}
+    
+        
+    La figura \ref{fig:ejemplo2} muestra la evolución de la variable $w^{ij}_{t}$ de dos pares de elementos de la red. A la izquierda, figura \ref{fig:5124} con $\epsilon = 0\text{.}25$, que corresponde a un estado de sincronización, la dinámica en la evolución del peso de enlace entre los elementos crece hasta llegar a un valor de saturación estable. En cambio, en la figura \ref{fig:weuno}, con $\epsilon = 0 \text{.}15$ que corresponde a un estado de desincronización, la dinámica de la evolución de los pesos presenta una mayor actividad debido a que la diferencia entre el valor de la variable de activación de los nodos se mantiene, hasta llegar a un punto donde la conexión entre los nodos está totalmente debilitada.
+    
+   Para determinar cómo depende el comportamiento del sistema de la intensidad de acoplamiento $\epsilon$ y  el grado de plasticidad $\delta$ la figura \ref{fig:SDAc} muestra el diagrama de fase en el espacio de parámetros ($\delta$,$\epsilon$) usando como parámetros de orden $\sigma^2$, figura \ref{fig:SD}, y $A$ figura \ref{fig:Ac}. Se aprecia en ambos casos que para valores pequeños del acoplamiento $\epsilon$ el sistema no logra sincronizarse, sin importar que tan grande sea el valor de la plasticidad $\delta$. También podemos decir que el valor crítico de la intensidad del acoplamiento para la cual se da la transición sincronización-desincronización $\epsilon_c$ depende del valor de la plasticidad de la red $\delta$, aumentado cuando este último crece.
+   
+   
+   	La barra de colores de la figura \ref{fig:SD} representa el valor de la varianza de los elementos de la red, del negro, pasando por el azul hasta el amarillo para la desincronización y el blanco para la sincronización. Se observa que existe una clara separación entre ambas regiones, y que el estado de sincronización de la red depende en menor grado del valor del parámetro $\delta$, que del parámetro $\epsilon$, determinando así que el estado de sincronización depende en mayor medida de la fuerza de de la interacción de sus elementos que de la plasticidad que está presente. Nótese además que en la figura \ref{fig:Ac} que corresponde con la actividad en la matriz de adyacencia de la red la región de mayor actividad en la matriz de adyacencia corresponde con la región de desincronización de la red aunque con valores menores que $10^{-4}$, donde se considera la existencia de una estructura estable en las conexiones de la red.
+   
+   
+     \begin{figure}[h]
+        \centering
+        \begin{subfigure}{\textwidth}
+            \begin{subfigure}{0.5\textwidth}
+                \includegraphics[width=\textwidth]{imagenes/sinW.pdf}
+                \refstepcounter{subfigure}\label{fig:5124}
+            \end{subfigure}
+            \begin{subfigure}{0.5\textwidth}
+                \includegraphics[width=\textwidth]{imagenes/desinW.pdf}
+                \refstepcounter{subfigure}\label{fig:weuno}
+            \end{subfigure}
+        \end{subfigure}
+        \caption{Evolución del valor instantáneo de dos pesos para $\delta=0\text{.}5$ y dos valores de $\epsilon$. a) $\epsilon=0\text{.}25$. b) $\epsilon=0\text{.}15$.}
+        \label{fig:ejemplo2}
+        \end{figure}
+	\begin{figure}[h]
+	\centering
+		\begin{subfigure}{\textwidth}
+            \begin{subfigure}{0.5\textwidth}
+			\includegraphics[width=\linewidth]{imagenes/SinDesin.pdf}
+			\refstepcounter{subfigure}\label{fig:SD}
+			\end{subfigure}
+			\begin{subfigure}{0.5\textwidth}
+			\includegraphics[width=\linewidth]{imagenes/Ac.pdf}
+			\refstepcounter{subfigure}\label{fig:Ac}
+			\end{subfigure}
+	    \end{subfigure}
+		\caption{Diagramas de fases en el espacio de parámetros ($\delta$,$\epsilon$) en negro se muestra la región de desincronización y en blanco la región sincronizada. a) Parámetro de orden $\sigma^2$. b) Parámetro de orden $A$}
+		\label{fig:SDAc}
+	\end{figure}
+
+\section{Aplicación de Perturbaciones Externas}
+	Conocido el comportamiento del sistema sin perturbaciones se propone introducir un primer tipo de perturbación mediante la siguiente modificación a nuestro modelo base
+    \begin{equation}\label{eq:elementoTS}
+    \begin{aligned}
+        x_{t+1}^i &= (1-\epsilon) [(y_{t}^{i})^2 e^{y_{t}^{i}-x_{t}^{i}} + k] + \epsilon \sum_{j} w_{t}^{ij} [(y_{t}^{j})^2 e^{y_{t}^{j}-x_{t}^{j}} + k] + B  \\
+        y_{t+1} &= ay_{t} - bx_{t} + c
+    \end{aligned} \; ,
+    \end{equation}
+    donde $B$ es la magnitud de la perturbación que se aplica a cada elemento $x_{t}^{i}$ de la red en todo instante de tiempo $t$. Se determinó que la perturbación sería aplicada cuando la red alcanzara un estado estable de sincronización. Se requiere que la red tenga un estado sincronizado antes de aplicar la perturbación, en la figura \ref{fig:comp} muestra la evolución de la varianza instantánea de la red de arriba hacia abajo para $\delta =0\text{.}50$ con $\epsilon = 0\text{.}30$ y $\epsilon = 0\text{.}35$ y para $\delta = 0\text{.}60$ con $\epsilon = 0\text{.}40$ y $\epsilon = 0\text{.}45$. Se observa que para $t > 20$, $\sigma < 10^{-6}$ determinando así que la red alcanza un estado sincronizado en menos de $20$ iteraciones.
+    
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=0.6\linewidth]{imagenes/varianzat.pdf}
+		\caption{Logaritmo de la varianza instantánea de la red para $\delta =0\text{.}50$ con $\epsilon = 0\text{.}30$ y $\epsilon = 0\text{.}35$ y para $\delta = 0\text{.}60$ con $\epsilon = 0\text{.}40$ y $\epsilon = 0\text{.}45$}
+		\label{fig:comp}
+	\end{figure}
+	En la figura \ref{fig:TS_B}, se observa la evolución en el tiempo de cuatro elementos de la red al aplicar una perturbación de intensidad $B = 0\text{.}20$ y $B = -0\text{.}30$ en el instante de tiempo $t_{o}=150$ asegurando así que la red ya se encuentre en un estado estable de sincronización.
+	
+	\begin{figure}[h]
+		\centering
+		\begin{subfigure}{\textwidth}
+			\begin{subfigure}{0.5\textwidth}
+				\includegraphics[width=\textwidth]{imagenes/AS_20.pdf}
+				\refstepcounter{subfigure}\label{fig:TS_20}
+			\end{subfigure}
+			\begin{subfigure}{0.5\textwidth}
+				\includegraphics[width=\textwidth]{imagenes/AS_30.pdf}
+				\refstepcounter{subfigure}\label{fig:TS_30}
+			\end{subfigure}
+		\end{subfigure}
+		\caption{Evolución temporal de la variable de activación $x_{t}^i$ para 10 elementos de la red en con $\delta = 0\text{.}50$ y  $\epsilon = 0\text{.}25$ al aplicar una perturbación de magnitud constante $B$ en $t=150$. a) $B=0\text{.}20$ . b) $B=-0\text{.}30$.}
+		\label{fig:TS_B}
+	\end{figure}	 
+	La figura \ref{fig:TS_20} muestra que la red para $\delta =0\text{.}50$ y $\epsilon = 0\text{.}30$ alcanza un estado de sincronización caótica cerca de $t = 40$. Al aplicar la perturbación de magnitud $B=0\text{.}20$ en $t_{o} = 150$ se observa que el comportamiento de los elementos de la red pasa de ser caótico a ser estable, sin que pierda su estado sincronizado. 
+	
+	En cambio para el caso de $B=-0\text{.}30$ ,la figura \ref{fig:TS_30} presenta un sistema que pasa de un estado aparentemente caótico sincronizado antes de aplicar la perturbación a un estado caótico desincronizado luego de aplicarla.
+	
+    Con el fin de estudiar el efecto que tiene la perturbación sobre el sistema cuando este se encuentra sincronizado, establecemos los parámetros $\delta = 0\text{.}50$ y $\epsilon = 0\text{.}30$ para que el modelo se encuentre en la fase sincronizada ver figura \ref{fig:SDAc}, una perturbación $B \in (-0\text{.}30,0\text{.}30)$ luego de que la red alcance un estado estable de sincronización, es decir $t > 150$, dejándolo evolucionar por $t=1000$ iteraciones.
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=0.6\linewidth]{imagenes/TS.pdf}
+		\caption{Varianza de la red con una perturbación de magnitud $B \in (-0\text{.}30,0\text{.}30)$ aplicada a todos sus elementos siempre}
+		\label{fig:TS}
+	\end{figure}
+	 La figura \ref{fig:TS} muestra el logaritmo de la varianza $\sigma^2$ en función de la magnitud de la perturbación. Nótese que solamente para $ B > -0\text{.}20$, decrece de manera significativa el valor de $\sigma^2$, lo que indica que afecta la sincronización de la red. 
+	 
+	 Aunque esta estrategia  muestra ser efectiva para lograr que la red pase de estar sincronizada a no estarlo, la magnitud de la perturbación requerida es relativamente grande afectando a todos los elementos de la red, eso significa que en caso de redes neuronales biológicas se requeriría de la aplicación de un choque eléctrico fuerte en todas las neuronas.
+	 
+	  En vista de lo anterior planteamos una segunda estrategia que busca de reducir el número de veces que se aplica perturbación a todos los elementos de la red pero con cierta probabilidad, para ello definimos la función
+    \begin{equation}
+     \label{eq:thetauno}
+     \Theta_{t} (p_{1}) = \left\{
+           \begin{array}{lll}
+         1    & \mathrm{con \ probabilidad \ } p_{1}\\
+         0    & \mathrm{con \ probabilidad \ } 1 - p_{1}
+           \end{array}
+         \right. \; ,
+   \end{equation}
+   donde $p_{1}$ es la probabilidad con la cual la perturbación se  aplica en el instante de tiempo $t$ de acuerdo con la expresión
+       \begin{equation}\label{eq:elementothetauno}
+       \begin{aligned}
+        x_{t+1}^i &= (1-\epsilon) [(y_{t}^{i})^2 e^{y_{t}^{i}-x_{t}^{i}} + k] + \epsilon \sum_{j} w_{t}^ij [(y_{t}^{j})^2 e^{y_{t}^{j}-x_{t}^{j}} + k] + \Theta_{t} (p_{1})B \\
+        y_{t+1} &= ay_{t} - bx_{t} + c 
+    \end{aligned}    \; ,
+    \end{equation}
+    donde $B$ es la magnitud de la perturbación que se aplica con probabilidad $p_{1}$ a los elementos del sistema en cada iteración.
+    En la figura \ref{fig:TA_B} se presenta la evolución de cuatro elementos de la red $\delta =0\text{.}50$ y $\epsilon = 0\text{.}30$ al aplicar una perturbación $B=-0\text{.}15$ y $B=0\text{.}10$, con una probabilidad $p_{1} = 0\text{.}85$ donde se observa, a la izquierda, con una perturbación positiva el rango de valores de la variable de activación se reduce pero esta mantiene sincronizada. En cambio a la derecha se puede apreciar que con la aplicación de una perturbación negativa el estado de sincronización de la variable de activación de los elementos de la red se ve afectado.
+    
+	\begin{figure}[h]
+		\centering
+		\begin{subfigure}{\textwidth}
+			\begin{subfigure}{0.5\textwidth}
+				\includegraphics[width=\textwidth]{imagenes/TA1.pdf}
+				\refstepcounter{subfigure}\label{fig:TA_20}
+			\end{subfigure}
+			\begin{subfigure}{0.5\textwidth}
+				\includegraphics[width=\textwidth]{imagenes/TA2.pdf}
+				\refstepcounter{subfigure}\label{fig:TA_30}
+			\end{subfigure}
+		\end{subfigure}
+		\caption{Aplicación de una perturbación de magnitud $B$ constante  en $t_{o}=150$, a todos los elementos con una probabilidad $p_{1} = 0\text{.}85$. a) $B=0\text{.}10$ b) $B=-0\text{.}15$.}
+		\label{fig:TA_B}
+	\end{figure}	
+	La figura \ref{fig:TV} muestra el espacio de parámetros $(B,p_{1})$ donde se aprecia que con la aplicación  de una perturbación sobre todos los elementos 
+	de magnitud en torno a $B=-0\text{.}15$ y con una probabilidad $p_{1}=0\text{.}85$ se logra desincronizar la red. Obteniendo así una mejora con respecto a la estrategia anterior, en la que se aplicaba una perturbación siempre, ya que se logra reducir la  magnitud de la perturbación y la cantidad de veces que esta se aplica. En otras palabras, con esta estrategia se logra reducir tanto la frecuencia y la magnitud de los choques eléctricos a la que se somete la red de neuronas.
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=0.6\linewidth]{imagenes/taprom.pdf}
+		\caption{Diagrama de fases con la aplicación de una perturbación $B$ a todos los elementos con probabilidad $p_{1}$}
+		\label{fig:TV}
+	\end{figure}
+	
+
+    Planteamos una tercera estrategia con la que se busca de reducir la cantidad de elementos que se perturban en cada iteración para esto se define la función
+    \begin{equation}
+     \label{eq:thetados}
+     \Theta_{i} (p_{2}) = \left\{
+           \begin{array}{lll}
+         1    & \mathrm{con \ probabilidad \ } p_{2}\\
+         0    & \mathrm{con \ probabilidad \ } 1 - p_{2}
+           \end{array}
+         \right. \; ,
+   \end{equation}
+   donde $p_{2}$ es la probabilidad de que la perturbación sea aplicada al elemento $i$ en la iteración actual. Quedando el modelo expresado de la forma
+       \begin{equation}\label{eq:elementothetados}
+       \begin{aligned}
+        x_{t+1}^i &= (1-\epsilon) [(y_{t}^{i})^2 e^{y_{t}^{i}-x_{t}^{i}} + k] + \epsilon \sum_{j} w_{t}^ij [(y_{t}^{j})^2 e^{y_{t}^{j}-x_{t}^{j}} + k] + \Theta_{i} (p_{2})B \\
+        y_{t+1} &= ay_{t} - bx_{t} + c 
+    \end{aligned} \; ,
+    \end{equation}
+    donde $B$ representa la magnitud de la perturbación que se aplica al elemento $i$ con probabilidad $p_{2}$. 
+    
+    La figura \ref{fig:elem_DAS} muestra la evolución de cuatro elementos del sistema para tres pares de valores de los parametros $B$ y $p_{2}$, así como también el comportamiento de $\sigma_{t}^{2}$ para estos tres casos. Nótese que en la figura \ref{fig:DAS1}
+    donde se perturba aleatoriamente con probabilidad $p_{2} = 0\text{.}50$ a los elementos de la red y con una magnitud $B=-0\text{.}10$ se logra afectar la sincronización de la red. Por otra parte en las figuras \ref{fig:DAS2} y \ref{fig:DAS3} donde la perturbación que se aplico a los elementos de la red fue $B=0\text{.}10$, primero con una probabilidad $p_{2}= 0.20$ y luego aumentado esta a $p_{2}=0.90$ no se logra afectar de manera significativa el estado de sincronización de la red. En la figura \ref{fig:DAS} se puede observar la evolución de la desviación de los elementos de la red para los tres pares de valores de los parámetros $B$ y $p_{2}$. En color rojo se tiene la región desincronizada para $p_{2} = 0\text{.}50$ y $B = -0\text{.}10$, en color verde se tiene la región sincronizada con $p =0\text{.}20$ y $B=0\text{.}10$ y finalmente en color azul se tiene la región sincronizada para $p= 0\text{.}90$ y $B=0\text{.}10$; que corresponden a lo mostrado en las figuras \ref{fig:DAS1}, \ref{fig:DAS2}, \ref{fig:DAS3} respectivamente.
+ \begin{figure}[h]
+		\centering
+    	\begin{subfigure}{\textwidth}
+    		\begin{subfigure}{0.5\textwidth}
+    		    \includegraphics[width=\textwidth]{imagenes/elem_DAS1.pdf}
+        		\refstepcounter{subfigure}\label{fig:DAS1}
+    		\end{subfigure}
+    		\begin{subfigure}{0.5\textwidth}
+    		    \includegraphics[width=\textwidth]{imagenes/elem_DAS2.pdf}
+        		\refstepcounter{subfigure}\label{fig:DAS2}
+    		\end{subfigure}    		
+    	\end{subfigure}
+    	\begin{subfigure}{\textwidth}
+    		\begin{subfigure}{0.5\textwidth}
+    		    \includegraphics[width=\textwidth]{imagenes/elem_DAS3.pdf}
+        		\refstepcounter{subfigure}\label{fig:DAS3}
+    		\end{subfigure}
+    		\begin{subfigure}{0.5\textwidth}
+    		    \includegraphics[width=\textwidth]{imagenes/DAS.pdf}
+        		\refstepcounter{subfigure}\label{fig:DAS}
+    		\end{subfigure}
+    	\end{subfigure}    	
+		\caption{Evolución de cuatro elementos de la red en la aplicación de una perturbación con probabilidad $p_{2}$ a los elementos de la red. a) $p_{2} = 0\text{.}50$ y $B = -0\text{.}10$. b) $p_{2} =0\text{.}20$ y $B=0\text{.}10$. c) $p_{2}= 0\text{.}90$ y $B=0\text{.}10$. En d) se tiene la varianza de la red en rojo para a) , verde para b) y azul para c)}
+		\label{fig:elem_DAS}
+	\end{figure}
+	
+	Al igual que con las estrategias anteriores, con esta se observa que con una perturbación negativa se logra un mayor efecto
+	de pérdida de sincronización de los elementos de la red, como se puede observar en la figura \ref{fig:DAS1}. En cambio para perturbaciones positivas, figuras \ref{fig:DAS2} y \ref{fig:DAS3}, aunque se note una pequeña diferencia entre los estados de los elementos del sistema el efecto más significativo es la pérdida de su comportamiento caótico y excitable.
+	
+	La figura \ref{fig:AS} muestra el diagrama de fase de esta estrategia en el espacio de parámetros $(B$ y $p_{2})$. Se observa que el estado de sincronización de la variable de activación de los elementos de la red solo se ve afectada con perturbaciones de magnitud negativa, sin embargo el  rango de valores que puede tomar esta magnitud es mucho mas amplio y en este caso es mas pequeño, lo cual es una mejoría considerable ya que el choque eléctrico que se aplica a las neuronas es mas débil y basta con aplicarlo solo a algunas de las neuronas de la red en cada iteración para lograr desincronizarlas.
+	
+	\begin{figure}[!ht]
+		\centering
+		\includegraphics[width=0.6\linewidth]{imagenes/asprom.pdf}
+		\caption{Diagrama de fases en el espacio de parámetros $(B,p_{2})$ con la estrategia de aplicar una perturbación siempre a algunos elementos escogidos aleatoriamente con probabilidad $p_{2}$ en cada iteración}
+		\label{fig:AS}
+	\end{figure}
+	
+
+	    
+    Finalmente combinando las dos estrategias anteriores para la aplicación de una perturbación externa, definidas por las ecuaciones (\ref{eq:thetauno}) y (\ref{eq:thetados}), se obtiene el modelo
+    
+       \begin{equation}\label{eq:elementofinal}
+       \begin{aligned}
+        x_{t+1}^i &= (1-\epsilon) [(y_{t}^{i})^2 e^{y_{t}^{i}-x_{t}^{i}} + k] + \epsilon \sum_{j} w_{t}^ij [(y_{t}^{j})^2 e^{y_{t}^{j}-x_{t}^{j}} + k] + \Theta_{t} (p_{1}) \Theta_{i} (p_{2})B \\
+        y_{t+1} &= ay_{t} - bx_{t} + c 
+    \end{aligned} \; ,
+    \end{equation}
+    
+    donde la perturbación se aplica en el instante de tiempo $t$ con probabilidad $p_{1}$ al elemento $i$ escogido con probabilidad $p_{2}$. Para esta estrategia se establecieron dos valores para la magnitud de la perturbación $B=-0\text{.}10$ y $B=0\text{.}10$.
+    
+	\begin{figure}[h]
+		\centering
+		\begin{subfigure}{\textwidth}
+			\begin{subfigure}{0.5\textwidth}
+				\includegraphics[width=\textwidth]{imagenes/B_-1_0.pdf}
+				\refstepcounter{subfigure}\label{fig:AV-10}
+			\end{subfigure}
+			\begin{subfigure}{0.5\textwidth}
+				\includegraphics[width=\textwidth]{imagenes/B_+1_0.pdf}
+				\refstepcounter{subfigure}\label{fig:AV+10}
+			\end{subfigure}
+		\end{subfigure}
+		\caption{Diagrama de fase en el espacio de parámetros $(p_{1},p_{2})$ para la cuarta estrategia, se perturba en cada iteración con probabilidad $p_{1}$ a algunos elementos escogidos con probabilidad $p_{2}$. a) $B=-0\text{.}10$. b) $B=0\text{.}10$. Note que la escala de colores es diferente para cada una de las figuras}
+		\label{fig:AV}
+	\end{figure}	
+	En la figura \ref{fig:AV}, se tiene que la aplicación de la perturbación $B$, para las magnitudes consideradas, nuevamente al igual que en la estrategias anteriores tenemos que una perturbación de magnitud negativa es la que mas afecta el estado de sincronización de la variable de activación de los elementos de la red. Por otro lado aunque los valores de $\sigma^2$ que se obtienen con una perturbación de magnitud positiva son pequeños, estos son menores que $10^{-3}$ y puede considerarse que se logro afectar la sincronización en los elementos de la red. 
+	Con esta ultima estrategia se logra reducir no solo el numero de neuronas a las cuales se le tiene que aplicar la perturbación para desincronizarlas, si no que se logro reducir la frecuencia con que esta es aplicada en la red de neuronas.

@@ -1,0 +1,149 @@
+\prefacesection{Introducción}
+La sincronización es un fenómeno que puede estar presente  en la dinámica de sistemas compuestos por elementos osciladores. Este fenómeno tiene un papel importante en distintos campos de las ciencias, como lo son la Biología, Ecología, Climatología, Sociología, Tecnología, llegando incluso hasta las Artes\citep{Arenas2008}. Se han realizado experimentos donde se  observa sincronización en comunicación\citep{Giles1991}, el trabajo en conjunto de personas\citep{Richardson2008}, en donde la interacción de los individuos se manifestaba por medio de una conversación, el entonar una canción o simplemente imitar ritmos y sonidos, también donde no estaba presente ningún tipo de instrucción dada a los individuos con anterioridad\citep{Weiss1998,Weiss2003}, sino que espontáneamente se manifestaba distintos tipo de sincronía entre los individuos.
+ 
+        Entre los esfuerzos científicos por entender el fenómeno de la sincronización, existen varios trabajos que han sido de vital importancia. Comenzando en  1665 con el trabajo del matemático y físico C. Huygens, el inventor del reloj de péndulo, quien descubrió una “extraña conexión” que existía entre dos péndulos colgados uno al lado del otro\citep{czolczynski2011huygens}; los péndulos se movían  exactamente con la misma frecuencia y tenían un retardo  de fase de 180 grados; además, cuando  estos eran sometidos a una perturbación, el estado de retardo fase de 180 grados se restauraba en aproximadamente media hora y así, continuaba la oscilación de los péndulos indefinidamente. Huygens dedujo,  que tal fenómeno ocurría debido a la interacción entre los dos relojes de péndulo mediante movimientos imperceptibles que se transmitían a través del soporte común del cual estaban suspendidos los relojes. Es a partir de ese momento que los científicos pusieron su atención en el estudio de este fenómeno.
+         
+        El obituario de Arthur T. Winfree, resume lo que se considera como el comienzo del estudio moderno del fenómeno de sincronización en una población de individuos que interactúan entre sí: 
+\begin{center}
+“\textit{Wiener \citep{Wiener1961} postuló el siguiente problema en su libro Cybernetics ¿Cómo es posible que miles de neuronas, luciérnagas o grillos, pueden repentinamente activarse, parpadear o cantar al mismo tiempo sin la existencia de algún líder o señal alguna del ambiente que las rodea? Sin embargo Wiener no hizo grandes avances matemáticos en ello, realmente nadie más lo hizo hasta el trabajo de Winfree}”.\citep{Strogatz2003}
+\end{center}
+ 
+Ahora bien, Winfree, construye, la primera modelización matemática de la sincronización. Winfree observó un comportamiento cooperativo en una gran población de osciladores biológicos con ciclo límite\citep{Winfree1967} y frecuencias intrínsecas distribuidas alrededor de un valor promedio. Descubrió que, cuando la distribución de las frecuencias de los osciladores era grande y el acoplamiento débil, los osciladores actuaban incoherentemente; cada uno manteniéndose cerca de su propia frecuencia natural siendo cada una diferente. Contrariamente, ocurría un fenómeno de sincronización espontáneo cuando a dicha población de osciladores se le iba reduciendo la varianza de frecuencias y aumentando el acoplamiento\citep{Winfree2001}.
+        Por tanto, podemos decir que, el fenómeno de sincronización ocurre cuando un grupo de osciladores autónomos ajustan sus ritmos volviéndose cada vez mas similares debido a la presencia de una interacción débil entre ellos\citep{Pikovsky2001}. 
+        
+        Este comportamiento descrito por Winfree, llamo la atención de Yoshiki Kuramoto quien comenzó a estudiar este fenómeno en 1975\citep{kuramoto1975self},mediante un modelo conocido como el Modelo de Kuramoto. En su trabajo Kuramoto asumió que los osciladores que formaban estos sistemas eran prácticamente idénticos y estaban débilmente acoplados entre sí. Este modelo ha sido usado para describir el fenómeno de sincronización, en grandes grupos de osciladores acoplados\citep{strogatz2000kuramoto}, y se han encontrado aplicaciones en el área de la neurociencia\citep{cumin2007generalising,breakspear2010generative,cabral2014exploring}. Más tarde, en 1990 Louis Pecora y Thomas Carrol\citep{pecora1990synchronization} aplicaron estas ideas a un grupo de circuitos caóticos haciendo que los osciladores se sincronicen en una órbita caótica común a todos ellos.
+        
+        El cerebro humano, compuesto fundamentalmente por neuronas, puede representarse como un sistema formado por osciladores autónomos y posiblemente caóticos, en donde la interacción de una cantidad multitudinaria de estos elementos, sucede mediante sustancias químicas como neurotransmisores. Se ha comprobado que en el cerebro puede ocurrir parcialmente el fenómeno de sincronización, el cual se muestra como un elemento central en la unificación de la actividad cerebral y en la emergencia de nuestra conciencia\citep{singer1999neuronal,buzsaki2004neuronal}. También parece ser fundamental en el desarrollo del pensamiento, atención, memoria, acciones motoras y en la capacidad de percibir estímulos externos e internos de forma balanceada y unificada. La disfunción de estos mecanismos podría dar cuenta de las alteraciones  y patologías como la epilepsia, la esquizofrenia y el párkinson.
+
+
+	%%-Justificacion-El propósito principal para la realización del presente proyecto de tesis, ha de hacerse, con el  uso  de modelos de actvidad neuronal, para modelar la dinamica del cerebro y de esta manera estudiar la posibilidad, de manipular el fenómeno de sincronización en las redes neuronales, mediante la aplicación de perturbaciones, determinando cuál de ellas es la más adecuada para deducir, el cómo lograr un dominio sobre dicho fenómeno. 
+
+\section{Antecedentes}
+        La sincronización caótica es un fenómeno que puede estar presente en el comportamiento de algunos sistemas dinámicos. Su estudio ha impactado diversas áreas como la biología, las comunicaciones y el control de sistemas dinámicos.
+        
+        Se ha estudiado la sincronización caótica de manera experimental en sistemas de comunicación formados por lasers caóticos\citep{uchida2005synchronization} y la comunicación por fibra óptica usando un análisis del dominio espectral\citep{argyris2005spectral}. También se realizaron trabajos donde se manifiestan distintos tipos de sincronización caótica; la sincronización completa, con retardo, generalizada y de fase imperfecta. Estudios que proveyeron explicita información de su relevancia en áreas como; la fisiología, la óptica no lineal y la dinámica de fluidos. En donde se lograron desarrollar  aplicaciones experimentales pertinentes para cada una de  estas áreas.\citep{boccaletti2002synchronization}. 
+        
+        Por otra parte, se han hecho estudios de sincronización caótica en redes, donde se expone, que dicho fenómeno requiere la presencia de una relación funcional diferente a la identidad entre los elementos que componen la red, la cual es establecida entre el subsistema de forzamiento y el subsistema de respuesta \citep{maistrenko1996different,abarbanel1996generalized,hunt1997differentiable}. Otra de las características que ha sido analizada, son las condiciones mínimas necesarias que se requieren para la aparición del fenómeno de sincronización caótica en sistemas formados por mapas caóticos acoplados, que es observada en una gran variedad de sistemas complejos\citep{llamozasincronizacion,osenza1998synchronization}, Por ejemplo: una red aleatoria dirigida, donde se ha encontrado que el factor de acoplamiento requerido para que la sincronización ocurra se manifiesta débil, cuando la fracción de conexiones dirigidas se aumenta\citep{decastro2010chaotic}.
+                 
+        En cuanto al campo de sistemas complejos; como lo representa el cerebro humano, se han propuesto varios modelos que buscan imitar la capacidad que tienen los sistemas complejos de cambiar y aprender de la experiencia. Entre ellos tenemos, la teoría Hebbiana, que se encuentra fundamentada en el mecanismo de hacer que las neuronas respondan a un procedimiento de cambio o adaptaciones ante lo que se denomina un "proceso de aprendizaje"\citep{hebb2005organization}. Otro modelo corresponde, a la propuesta de una variación de los pesos  con respecto al tiempo de las conexiones entre lo elementos\citep{ito2009self}, Un tercer modelo registra un proceso de sinapsis o interacción entre los elementos, en el cual se seleccionaban únicamente, los  que se consideraban más ''fuertes''  y poder propiciar su propagación\citep{chialvo1999learning}, y por último pero no menos importante;  un modelo que presenta la interacción que hay en  los mapas acoplados de una red, éste consiste en exclusivamente en dos acciones: conexión y desconexión, la cual depende de una comparación, que se hace entre los estados de los elementos que componen la red\citep{herrera2011general}.
+        
+        Por otra parte, se han realizado investigaciones del fenómeno de sincronización en redes formadas por modelos activos de neuronas, entre tantos, se conocen los que fueron propuestos por Chialvo \citep{chialvo1995generic} y otro por Rulkov\citep{rulkov2002modeling}, Este último de igual manera presentó, junto con su modelo de neuronas, un análisis cuyo resumen expone un modelo por el cual, imitaba el proceso de  sincronización que se encuentra en las neuronas biológicas reales. Seguidamente  se estudió el efecto que tiene la variación de la fuerza de acoplamiento y el grado de aleatoriedad del mismo, en una red formada por  mapas acoplados, propuesto por Chialvo.  Se advirtió, que en presencia de un aumento exponencial de la fuerza de acoplamiento, con respecto a sus acoples aleatorios, ocurría el fenómeno de sincronización.\citep{jampa2007synchronization} Usando nuevamente el modelo de Chialvo se examinó, el fenómeno de sincronización en una red de mapas acoplados, donde se establecieron sub-poblaciones  de tamaños distintos y dinámicas intrínsecas propias. Por tanto, se pudo observar la influencia que tenía uno de los grupos en el otro, provocando desincronización o sincronización entre ellos.\citep{kamal2015emergent}.  
+
+\section{Planteamiento del Problema}
+	En los sistemas dinámicos sobre redes complejas se pueden dar diversos fenómenos entre ellos la sincronización. La sincronización en las redes neuronales puede ocurrir en muchos niveles diferentes, desde un par de neuronas ubicadas a corta distancia, hasta grandes grupos neuronales localizados en diferentes hemisferios. A pesar de los diferentes niveles en los que las neuronas se conectan para lograr una sincronización estable, primero es necesario que establezcan un patrón de actividad oscilatoria, que ha demostrado ser una propiedad intrínseca de grupos neuronales\citep{buzsaki2004neuronal}. 
+	
+        Por otra parte, la sincronía neuronal no sólo es importante para unir funcionalmente a grupos de neuronas separadas entre sí, sino también es esencial para poder realizar una comunicación efectiva a través de todo el cerebro, convirtiéndose entonces, en parte crucial de los procesos de aprendizaje\citep{Singer1993}, verbales\citep{bastiaansen2006}, cognitivos\citep{varela1994resonant}, sensoriales y para el mando de control de los sistemas que necesitan marchar en el organismo, tales como los sistemas: respiratorio\citep{schafer1999}, circulatorio y endocrino\citep{buijs2003biological}. Sin embargo también se ha comprobado que la hiper-sincronía cerebral se encuentra íntimamente relacionada con los comportamientos inusuales, patologías o enfermedades de origen neurológico, tales como: las alucinaciones visuales y auditivas acompañadas con ideas delirantes de convencimiento y certeza, cuyo cuadro sintomático se relaciona con esquizofrenia paranoide\citep{Alvarez-Silva2010,ford2007neural}. También se  relaciona con las fases maníacas y depresivas propias de los trastornos bipolares\citep{Alvarez-Silva2007}, ataques de pánico\citep{Alvarez-Silva2006}, crisis de pérdida de personalidad o desorientación e impulsos suicidas\citep{Oliveira2011} y ataques convulsivos propios de la epilepsia \citep{uhlhaas2006neural}. Es por esto que algunos experimentos han centrado su atención en el significado de los procesos de desincronización. Estos períodos de actividad descoordinada permitirían pasar de un estado cognitivo a otro y se piensa que serían un mecanismo importante para el funcionamiento cerebral.
+        Siguiendo en este orden de ideas, este trabajo tiene como finalidad presentar un estudio en el campo de los sistemas complejos de redes neuronales en dónde busca establecer criterios para controlar  comportamiento sincronizado/desincronizado, mediante la aplicación de perturbaciones externas, aplicadas a modelos de redes neuronales, donde nos lleva inevitablemente a plantear la siguiente interrogante, ¿Es factible el uso de perturbaciones externas para evitar el comportamiento propio de la sincronización generado en las redes neuronales del cerebro?
+\section{Objetivos}
+\subsection{Objetivo general}
+\begin{center}
+{\it Estudiar el fenómeno de sincronización en sistemas de osciladores caóticos excitables sometidos a perturbaciones} 
+\end{center}
+\subsection{Objetivos Específicos}
+\begin{enumerate}
+\item Analizar algunos modelos de neuronas basados en mapas caóticos.
+\item Investigar el fenómeno de sincronización.
+\item Examinar algunos mecanismos para la dinámica de los pesos de las sinapsis entre las neuronas.
+\item Implementar una red de mapas acoplados.
+\item Someter a la red de mapas acoplados a perturbaciones de diferentes intensidades y frecuencia siguiendo diversas estrategias, para construir los diagramas de fases del sistema.
+\end{enumerate}
+
+
+\section{Justificación}
+	La aplicación del fenómeno de sincronización en las ciencias sociales y la economía, ha llevado a descubrir comportamientos interesantes, algunos ejemplos son: la capacidad de formar consensos, bajo un mismo criterio o perspectiva, permitiendo el desarrollo de una opinión unánime en un contexto social donde interactúan cualquier cantidad de personas (elementos). Vale destacar que son pocas las formulaciones claras de la existencia de este fenómeno, mas sin embargo, no por ello dejan de ser significativamente importantes para abrir las puertas a futuras investigaciones en este tema.
+	
+	Por otra parte, en la ingeniería y la computación, el estudio del fenómeno de sincronización representa suma importancia en el campo de la computación paralela y distribuida, minería de datos, comunicaciones inalámbricas, logística descentralizada, redes de distribución eléctrica etc. Dado que estos sistemas cada vez son más y más grandes, también su complejidad aumenta, por lo tanto se proponen con más interés y frecuencia, técnicas de simulación y agrupamiento basadas en el fenómeno de sincronización.
+	
+	Otra de las aplicaciones que tiene el fenómeno de sincronización se encuentra en el campo de la biología que van desde escala molecular hasta grandes poblaciones en los casos de redes genéticas, ritmos circadianos, la ecología, y el estudio de las redes neuronales en las redes complejas del cerebro, ya que este al estar formado por billones de neuronas que están acopladas bajo cierta jerarquía de conectividad, está presente el fenómeno de sincronización y se cree que este tiene un rol crucial en el proceso cognitivo, como lo son el proceso
+de aprendizaje, la memoria, la capacidad musical ,etc.
+
+	Ahora bien, esta sincronización presente en las redes neuronales del cerebro, también se encuentra ligada enfermedades de origen cerebral como la epilepsia ,esquizofrenia y el síndrome de Parkinson, tomando en cuenta esa relación es evidente que el estudio de este fenómeno es de bastante utilidad. Ayudando en determinar como el cerebro podría mantener niveles equilibrados de sincronización, ó en la contribución del análisis de datos de las actividades patológicas del cerebro, por ejemplo en predecir las enfermedades antes de que sean muy graves o crónicas, de modo que se pueda diseñar métodos adecuados para el tratamiento de estas enfermedades neurológicas a partir de un diagnóstico oportuno y a tiempo.
+	
+	Por lo anteriormente expuesto, el presente trabajo de grado, pretende estudiar el fenómeno de sincronización en las redes neuronales del cerebro, usando modelo activos de neuronas y de esta manera determinar una criterio de control adecuado en donde se pueda evitar que éste, entre en un estado de sincronización, el cual ha de considerarse no deseable. Los ataques de epilepsia caracterizan uno de esos comportamientos no deseables producto de la sincronización, por tanto mantener dicha red neuronal en un estado de desincronización habrá de resultar en un posible planteamiento teórico, donde la implementación de un dispositivo cuyo funcionamiento sea similar al de un marcapasos cerebral sea factible y viable.
+	
+\section{Metodología}
+
+	La metodología por el cual ha de estar diseñado el presente trabajo de grado, consistirá principalmente en una revisión bibliográfica sobre la teoría de redes plásticas, los modelos neuronales de Chialvo y Rulkov y de diversas investigaciones acerca del fenómeno de sincronización de estos modelos con el fin de identificar ecuaciones y parámetros necesarios para la simulación de estas redes, mediante el uso de un computador. Para esto se hacen recopilaciones de diversos textos y artículos cuyo contenido sea abundante en fundamento teórico para el tema de investigación que representa el trabajo en cuestión.
+	
+	Luego se procederá a realizar la simulación de las distintas redes neuronales, variando sus parámetros como lo es el acoplamiento y también la dinámica de interacción de las neuronas (Sinapsis), de manera que se pueda determinar cuando éstas presentan sincronización de manera espontánea y cuando no.
+	
+	En base a estos resultados se procederá a aplicar perturbaciones externas de distinta frecuencia e intensidad y determinar cuál de ellas es la más conveniente para así mantener la red en un estado de desincronización, formando los distintos diagramas de fases, de tal manera que se pueda comparar cada una de las perturbaciones aplicadas, con la finalidad de analizar cual de estas es la más conveniente para mantener la red desincronizada.
+
+\section{Alcance}
+
+	El proyecto que se plantea en la siguiente investigación tiene las siguientes limitaciones. Por una parte se debe tomar en cuenta que los modelos matemáticos planteados no modelan el comportamiento completo de una neurona biológica y tampoco la completa interacción o sinapsis que ocurre entre ellas sin embargo, este es suficiente para el estudio teórico del presente proyecto.
+
+	En cuanto a la delimitación se refiere el modelo matemático de neuronas de Chialvo y de Rulkov, pueden reproducir de manera general algunos de los comportamientos de las neuronas naturales como los disparos de la ráfaga de picos , y con la correcta selección de los parámetros del modelo cada neurona de manera aislada presenta un ciclo-limite lo cual es necesario para que se presente el fenómeno de sincronización en un grupo de ellas, teniendo estos la simpleza necesaria para reproducir el comportamiento colectivo de un gran numero de neuronas por el medio del uso de redes complejas, lo cual logra describir el comportamiento obtenido de manera experimental en grupos de neuronas reales.
+	
+	Se debe tomar en cuenta que el presente proyecto no pretende el planteamiento de un criterio de control definitivo para el diseño y la aplicación de este de manera experimental debido a que no se posee una red de neuronas in vitro, para la debida prueba de este. Por el contrario, pretende expandir la posibilidad de un estudio más exhaustivo y experimental con mayor documentación teórica.
+
+\section{Cronograma de Trabajo}
+
+\begin{itemize}
+  \item Actividad 1: Revisión Bibliográfica acerca del fenómeno de sincronización en redes neuronales.
+  \item Actividad 2: Codificar los modelos neuronales propuestos para ser simulados.
+  \item Actividad 3: Codificar los modelos de dinámicas de pesos para ser simulados.
+  \item Actividad 4: Implementar las perturbaciones externas en cada uno de los modelos de activad neuronal.
+  \item Actividad 5: Construir los diagramas de fases del sistema con la información obtenida  
+  \item Actividad 6: Presentar los resultados y proponer cúal seria el criterio de control adecuado para mantener la sincronización/desincronización.
+  \item Actividad 7: Realización del manuscrito del proyecto de grado.
+  \item Actividad 8: Exponer los resultados en la defensa del Proyecto de Grado.
+  \end{itemize}
+
+Las actividades descritas anteriormente se distribuirán de la siguiente manera:
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|}
+\hline
+\multicolumn{1}{|c|}{Actividad/Semana} & \multicolumn{1}{c|}{1} & \multicolumn{1}{c|}{2} & \multicolumn{1}{c|}{3} & \multicolumn{1}{c|}{4} & \multicolumn{1}{c|}{5} & \multicolumn{1}{c|}{6} & \multicolumn{1}{c|}{7} & \multicolumn{1}{c|}{8} & \multicolumn{1}{c|}{9} & \multicolumn{1}{c|}{10} & \multicolumn{1}{c|}{11} & \multicolumn{1}{c|}{12} & \multicolumn{1}{c|}{13} & \multicolumn{1}{c|}{14} & \multicolumn{1}{c|}{15} \\
+\hline
+\multicolumn{1}{|c|}{Actividad 1} & \multicolumn{1}{c|}{X} & \multicolumn{1}{c|}{X} & \multicolumn{1}{c|}{X} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} \\
+\hline
+\multicolumn{1}{|c|}{Actividad 2} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{X} & \multicolumn{1}{c|}{X} & \multicolumn{1}{c|}{X} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} \\
+\hline
+\multicolumn{1}{|c|}{Actividad 3} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{X} & \multicolumn{1}{c|}{X} & \multicolumn{1}{c|}{X} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} \\
+\hline
+\multicolumn{1}{|c|}{Actividad 4} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{X} & \multicolumn{1}{c|}{X} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} \\
+\hline
+\multicolumn{1}{|c|}{Actividad 5} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{X} & \multicolumn{1}{c|}{X} & \multicolumn{1}{c|}{X} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} \\
+\hline
+\multicolumn{1}{|c|}{Actividad 6} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{X} & \multicolumn{1}{c|}{X} & \multicolumn{1}{c|}{X} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} \\
+\hline
+\multicolumn{1}{|c|}{Actividad 7} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{X} & \multicolumn{1}{c|}{X} & \multicolumn{1}{c|}{X} & \multicolumn{1}{c|}{X} & \multicolumn{1}{c|}{X} & \multicolumn{1}{c|}{X} & \multicolumn{1}{c|}{X} & \multicolumn{1}{c|}{X} & \multicolumn{1}{c|}{X} & \multicolumn{1}{c|}{X} & \multicolumn{1}{c|}{X} & \multicolumn{1}{c|}{X} & \multicolumn{1}{c|}{} \\
+\hline
+\multicolumn{1}{|c|}{Actividad 8} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{X} \\
+\hline
+\end{tabular}
+\caption{Cronograma de Actividades}
+\end{table}
+
+
+\section{Cronograma de Evaluaciones}
+
+El cronograma de evaluaciones a desarrollar se muestra en las siguientes tablas:
+
+\begin{table}[h]
+\centering
+\resizebox{15cm}{!} {
+\begin{tabular}{|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|}
+\hline
+\multicolumn{1}{|c|}{Semana} & \multicolumn{1}{c|}{1} & \multicolumn{1}{c|}{2} & \multicolumn{1}{c|}{3} & \multicolumn{1}{c|}{4} & \multicolumn{1}{c|}{5} & \multicolumn{1}{c|}{6} & \multicolumn{1}{c|}{7} & \multicolumn{1}{c|}{8} & \multicolumn{1}{c|}{9} & \multicolumn{1}{c|}{10} & \multicolumn{1}{c|}{11} & \multicolumn{1}{c|}{12} & \multicolumn{1}{c|}{13} & \multicolumn{1}{c|}{14} & \multicolumn{1}{c|}{15} \\
+\hline
+\multicolumn{1}{|c|}{Reuniones con el tutor} & \multicolumn{1}{c|}{X} & \multicolumn{1}{c|}{X} & \multicolumn{1}{c|}{X} & \multicolumn{1}{c|}{X} & \multicolumn{1}{c|}{X} & \multicolumn{1}{c|}{X} & \multicolumn{1}{c|}{X} & \multicolumn{1}{c|}{X} & \multicolumn{1}{c|}{X} & \multicolumn{1}{c|}{X} & \multicolumn{1}{c|}{X} & \multicolumn{1}{c|}{X} & \multicolumn{1}{c|}{X} & \multicolumn{1}{c|}{X} & \multicolumn{1}{c|}{X} \\
+\hline
+\multicolumn{1}{|c|}{Entrega de la Propuesta} & \multicolumn{1}{c|}{X} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} \\
+
+\hline
+\multicolumn{1}{|c|}{Presentación del Avance} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{X} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} \\
+
+\hline
+\multicolumn{1}{|c|}{Entrega del Proyecto de Grado} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{X} & \multicolumn{1}{c|}{} \\
+
+\hline
+\multicolumn{1}{|c|}{Defensa del Proyecto de Grado} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{} & \multicolumn{1}{c|}{X} \\
+\hline
+\end{tabular}
+}
+\caption{Cronograma de Evaluaciones}
+\end{table}

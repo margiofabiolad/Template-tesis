@@ -12,7 +12,7 @@
     Así:
 
         \begin{equation} \label{eq:2.1}
-            dE_{\nu} = I_{\nu} \cos \theta d\nu d\sigma  d\omega dt,
+            \boxed{dE_{\nu} = I_{\nu} \cos \theta d\nu d\sigma  d\omega dt,}
         \end{equation}
 	 
 	donde $I_{\nu}$ es la {\textit{intensidad específica o brillo}} con unidades en el sistema cgs de 
@@ -86,7 +86,7 @@
 
     \vspace{0.4cm}
  
-    El momento de un fotón $\gamma$ viene dado por $E/c$, con $c$ la velocidad de la luz $c = 3 \times 10^{10} cm \, s^{-1}$. De esta manera, el flujo de momento a lo largo de un rayo es
+    El momento de un fotón $\gamma$ viene dado por $E/c$, con $c$ la velocidad de la luz $c = 3 \times 10^{10} \mathrm{cm \, s^{-1}}$. De esta manera, el flujo de momento a lo largo de un rayo es
     
         $$dF_{\nu}/c.$$
 
@@ -130,7 +130,7 @@
         EDITAR
         
          \begin{wrapfigure}[13]{r}{0.5\linewidth} 
-            \begin{center}                \includegraphics[width=0.6\textwidth]{densidad_energia_cilindro.png}
+            \begin{center}                \includegraphics[width=0.6\textwidth]{fig2_2densidad_energia_cilindro.png}
                 \caption{{\small{Volumen para un cilindro. (Referencia: Radiative Processes in Astrophysics, Rybicki, G., pp 5.)}}}
                 \label{fig:2.2} 
             \end{center}
@@ -152,7 +152,7 @@
     Por otra parte, es necesario definir lo que se conoce como la {\textit{intensidad media o intensidad promedio}} $j_{\nu}$
 
         \begin{equation} \label{eq:2.13} 
-            j_{\nu}= \frac{1}{4\pi} \int{I_{\nu}d\omega}.
+            \boxed{j_{\nu}= \frac{1}{4\pi} \int{I_{\nu}d\omega}.}
         \end{equation}
 
     Finalmente, la {\textit{densidad de energía total}}  es obtenida (junto con sus unidades) por integrar $u_{\nu}$ sobre todas las frecuencias 
@@ -180,7 +180,7 @@
     e integrando sobre todas las frecuencias y la parte angular, la presión de radiación es
 
         \begin{equation} \label{eq:2.17} 
-            p = \frac{1}{3} u.
+            \boxed{p = \frac{1}{3} u.}
         \end{equation}
 
 
@@ -196,28 +196,28 @@
         
         
         
-        \begin{wrapfigure}[19]{r}{0.5\linewidth}
+        \begin{wrapfigure}[18]{r}{0.5\linewidth}
                 \begin{center}
                     \includegraphics[width=0.5\textwidth]{fig2_3area1_area2.png}                    \caption{\footnotesize{Constancia de la Intensidad a lo largo de los rayos.}}
             \label{fig:2.3}
             \end{center}
         \end{wrapfigure}
         
-    Por conservación de la energía $dE{\nu_1}= dE{\nu_2} $. Esto significa que la cantidad de energía emitida dentro del cono de apertura $d\omega_1$ coincide con la captada en el área $dA_2$ y la recibida dentro del cono de apertura $d\omega_2$ coincide con la emitida dentro del área $dA_1$ (ver fig. (\ref{fig:2.3}). De esta manera 
+    Por conservación de la energía $dE{\nu_1}= dE{\nu_2} $. Esto significa que la cantidad de energía emitida dentro del cono de apertura $d\omega_1$ coincide con la captada en el área $dA_2$ y la recibida dentro del cono de apertura $d\omega_2$ coincide con la emitida dentro del área $dA_1$ (ver fig. \ref{fig:2.3}). De esta manera 
     
         $$dA_1d\omega_1 = dA_2d\omega_2 \hspace{0.4cm}\rightarrow{dI_{\nu1} = I_{\nu2}},  $$ 
 
     Finalmente, $I_{\nu}=cte$, o en su forma diferencial 
 
         \begin{equation} \label{eq:2.18} 
-            \frac{dI_{\nu}}{ds} = 0.
+            \boxed{\frac{dI_{\nu}}{ds} = 0.}
         \end{equation}
     
     Significa que la intensidad es constante a lo largo de la trayectoria en ausencia de emisores o absorbedor o fuentes de radiación. 
 
 \subsection{Transferencia Radiativa}
 
-    La intensidad específica $I_{\nu}$ no se mantendrá constante cuando un rayo atraviese la materia y sufra procesos de emisión, absorción o dispersión ( {\textit{scattering}}).
+    La intensidad específica $I_{\nu}$ no se mantendrá constante cuando un rayo atraviese la materia y sufra procesos de emisión, absorción o dispersión ({\textit{scattering}}).
 
     \vspace{0.4cm} 
 
@@ -228,7 +228,7 @@
 
     
                     \begin{equation} \label{eq:2.19} 
-                        dI_{\nu} = - \kappa_{\nu} \rho I_{\nu} ds,
+                        \boxed{dI_{\nu} = - \kappa_{\nu} \rho I_{\nu} ds,}
                     \end{equation}   
         
         
@@ -271,7 +271,7 @@
             espontánea $j_{\nu}$
     
                 \begin{equation} \label{eq:2.24}
-                    j_{\nu} =   \frac{\epsilon_{\nu}\rho }{4\pi}. 
+                    \boxed{j_{\nu} =   \frac{\epsilon_{\nu}\rho }{4\pi}.}
                 \end{equation}
     
             Al recorrer una distancia $ds$, un haz de sección transversal $d\sigma$ viaja a través de un volumen $dV=d\sigma ds$. Así, la intensidad agregada al haz por emisión espontánea es
@@ -290,7 +290,7 @@
     La conservación de la energía en un haz que se propaga desde el punto 1 al punto 2 implica  $I_{\nu1} = I_{\nu2}$, lo cual es generalizada a través de la ec. (\ref{eq:2.18}). Ahora, al considerar la interacción de la radiación con el medio, deja de cumplirse la conservación de energía radiativa y se tiene la {\textit{ecuación de transferencia radiativa}},  la cual incluye los efectos de absorción  y emisión (una única ecuación que da la variación de la intensidad a lo largo de un rayo. Así, de las ecs. (\ref{eq:2.19}) y (\ref{eq:2.25}) se obtiene
 
         \begin{equation} \label{eq:2.26} 
-            \frac{dI_{\nu}}{ds} = -\alpha_{\nu} I_{\nu} + j_{\nu},  
+            \boxed{\frac{dI_{\nu}}{ds} = -\alpha_{\nu} I_{\nu} + j_{\nu},}  
         \end{equation}
  
     la cual proporciona una gran herramienta para resolver la intensidad en un medio que emite o absorbe. Incorpora además aspectos macroscópicos de la radiación que los relaciona con el coeficiente de absorción y emisión.
@@ -331,7 +331,7 @@
                     
                 Con solución 
       
-                    \begin{equation} \label{eq:1.30}
+                    \begin{equation} \label{eq:2.30}
                         I_{\nu}(s) = I_{\nu}(s_0) + \int_{s_0}^s{j_{\nu}(s')ds'}.
                     \end{equation}
 
@@ -348,64 +348,731 @@
         \end{equation}
     
     
+     Para:
+     
+        \begin{itemize}
+            \item[i.] $\tau_{\nu} < 1$: el medio se dice que es {\textit{ópticamente delgado o transparente}}. Es decir, es un medio donde el fotón típico de frecuencia $\nu$ puede atravesar el medio sin ser absorbido. 
+         
+            \item[ii.] $\tau_{\nu} > 1$: el medio se dice que es {\textit{ópticamente grueso u opaco}}. El fotón promedio de frecuencia $\nu$ no puede atravesar un medio entero sin ser absorbido. 
+
+         
+        \end{itemize}
+        
+        
+    La ecuación de transferencia (\ref{eq:2.26}) puede ser escrita (dividiendo por $\alpha_{\nu}$) como
+     
+        \begin{equation} \label{eq:2.32}
+            \boxed{\frac{dI_{\nu}}{d\tau_{\nu}} = -I_{\nu} + S_{\nu},}
+        \end{equation}
+
+    donde $S_{\nu}$ es conocida como la {\textit{función fuente}} definida como la relación del coeficiente de emisión al de absorción 
+
+        \begin{equation} \label{eq:2.33}
+            S_{\nu} \equiv \frac{j_{\nu}}{\alpha_{\nu}} \hspace{0.5cm} \textrm{emisión/absorción}.
+        \end{equation}
     
-	ve en la figura \ref{fig:supraini}, ocurre en el sistema un potencial de acción, antes de regresar a el punto de equilibrio
-	este comportamiento es una respuesta típica en los sistema del tipo reposo-excitable. Por otro lado si la perturbación ubica
-	a las variables de estado en el lado izquierdo del nullcline de $x$, el sistema regresa rápidamente a su estado de reposo lo
-	cual se observa en la figura \ref{fig:subini}.
+    Ya que la función fuente $S_{\nu}$ es a veces una cantidad física más simple que el coeficiente de emisión $j_{\nu}$ y la escala de profundidad óptica  revela  más claramente los intervalos importantes a lo largo de un rayo para el caso de la radiación, se suele sustituir $j_{\nu}$ y $\alpha_{\nu}$ por $\tau_{\nu}$ y $S_{\nu}$. Así mismo, podemos resolver formalmente la ecuación de transferencia si todas las cantidades en función de $s$ pasan a ser función de $\tau_{\nu}$. 
+    
+     
+    Multiplicando la ecuación por el factor integrante $e^{\tau{\nu}}$ y definiendo las cantidades $X \equiv I_{\nu}e^{\tau_{\nu}} $ y $Y \equiv  S_{\nu}e^{\tau_{\nu}} $, se tiene de (\ref{eq:2.32}) 
+    
+        \begin{equation} \label{eq:2.34}
+            \frac{X}{d\tau_{\nu}} = Y. 
+        \end{equation} 
+        
+    Con solución: 
+           
+        \begin{equation} \label{eq:2.35}
+            X(\tau_{\nu}) = X(0) + \int_{0}^{\tau_{\nu}}{Y(\tau_{\nu}')d\tau_{\nu}}. 
+        \end{equation}
+        
+        
+    Escribiendo la solución formal en términos de $I_{\nu}$ y $S_{\nu}$:
+
+        \begin{equation} \label{eq:2.36}
+            I_{\nu}(\tau_{\nu}) =  I_{\nu}(0)e^{-\tau_{\nu}} + \int_0^{\tau_{\nu}}{e^{-(\tau_{\nu} - \tau_{\nu}')} S_{\nu}(\tau_{\nu}')d\tau_{\nu}'}.
+        \end{equation}
+     
+    Ya que el factor $e^{-\tau_{\nu}}$ es solo un factor sin dimensiones que escala la absorción, la ec. (\ref{eq:2.35}) puede ser interpetada como: la intensidad inicial que disminuye por absorción más la fuente integrada que disminuye también por absorción. 
+    
+    
+\subsection{Camino Libre Medio y Fuerza de Radiación}
+
+    El {\textit{camino libre medio}} de un fotón es una alternativa para describir la absorción. Se define como la distancia promedio que un fotón puede viajar a través de un material absorbente  sin ser absorbido. Se relaciona con el coeficiente de absorción $\alpha_{\nu}$ de un material homogéneo. De la ley de absorción ec. (\ref{eq:2.28}) la probabilidad de que un fotón viaje al menos una profundidad óptica $\tau_{\nu}$ 
+    es simplemente $e^{-\tau_{\nu}}$. La profundidad óptica media  recorrida es entonces la unidad
+
+        \begin{equation} \label{eq:2.37}
+            \langle \tau_{\nu} \rangle = \int_0^{\infty}{\tau_{\nu}e^{-\tau_{\nu}}d\tau_{\nu}}=1. 
+        \end{equation}
+        
+        
+    Así, la distancia física media recorrida en un medio homogéneo es definida como el camino libre medio $l_{\nu}$ y es determinada por 
+        $$
+            \langle \tau_{\nu} \rangle  = \alpha_{\nu} l_{\nu} = 1,
+        $$
+        
+        o
+        
+        \begin{equation} \label{eq:2.38}
+            l_{\nu}  = \frac{1}{\alpha_{\nu} }.
+        \end{equation}
+        
+    El camino libre medio es el recíproco del coeficiente de absorción para un material homogéneo. 
+    
+    
+    \vspace{0.5cm}
+ 
+    {\bf{\large{Fuerza de Radiación}}}
+ 
+ 
+        En un medio que absorbe radiación esta ejerce una fuerza sobre el medio ya que la radiación propaga momento. El {\textit{vector de flujo de radiación}} se define como 
+        
+            \begin{equation} \label{eq:2.39} 
+                \vec{F_{\nu}} = \int{\vec{I_{\nu}} \; \vec{n} \, d\omega}, 
+            \end{equation}
+
+        con $\vec{n}$ el vector unitario a lo largo de la dirección del rayo. Como el momento de un fotón es $E/c$, el vector momento por unidad de área por unidad de tiempo por unidad de longitud de camino absorbido por el medio es
+
+            \begin{equation} \label{eq:2.40} 
+                \vec{\zeta} = \frac{1}{c} \int{\alpha_{\nu} \vec{F_{\nu}} d\nu}.
+            \end{equation}
+            
+            
+        Y como $dV = d\sigma ds$, el vector momento es la fuerza  por unidad de volumen impartida en el medio por el campo de radiación. 
+
+        La fuerza por unidad de masa del material es $\vec{f}=\vec{\zeta} / \rho$  o 
+
+            \begin{equation} \label{eq:2.41}
+                \vec{f}= \frac{1}{c} \int{\vec{\kappa_{\nu}} \;  \vec{F_{\nu}} d\nu}.
+            \end{equation}
+
+        En estas dos últimas ecuaciones, asumen que el coeficiente de absorción es isotrópico y no hay momento impartido por la emisión de radiación como es cierto para la emisión isotrópica. 
+        
+        
+\section{Cosmología: Marco Teórico}
+
+
+  \subsection{Principio Cosmológico} \label{sec:2.2.1}
+  
+    La isotropía de la Radiación del Fondo Cósmico de Microondas (CMB) nos dice que a primera aproximación el Universo es isotrópico y homogéneo actualmente. Esto último fue asumido en 1917 por Einstein en su modelo estático, que sería el primer modelo del Universo autoconsistente (Einstein, 1917). También, los modelos de Friedman tiempo después se convertirían en los modelos estándar para las dinámicas a gran escala del Universo.
+    
+    En 1923, Hermann Weyl introdujo su ``Postulado de Weyl'' (Weyl, 1923) que establecía la noción de geodésicas divergentes, las cuales representan las líneas de mundo de galaxias, que no se intersectan excepto en un {\textit{punto singular}} del pasado finito o infinito. Según esto, existe solo una geodésica pasando a través de cada punto en el espacio - tiempo, excepto en el origen.  De aquí es posible asignar un observador a cada línea de mundo. A esto se le conoce como {\textit{Observadores fundamentales}}, donde se supone que cada uno de ellos lleva consigo un reloj estándar y el tiempo medido en este, desde el punto singular, recibe el nombre de {\textit{tiempo cósmico}}.
+    
+    
+    En 1935, Robertson y Walker (Robertson, 1935; Walker, 1936) derivaron la métrica del espacio - tiempo para todos los modelos de Universos isotrópicos, homogéneos y en expansión uniforme, la cual era independiente de la suposición de que las dinámicas a gran escala eran descritas por la Teoría de la Relativdad General, i.e., no importaba cual fuera la física de la expansión,  la forma de la métrica era la de Robertson - Walker, esto partiendo del supuesto de isotropía y homogeneidad del Universo. 
+    
+    Otra consideración para construir un modelo cosmológico es el conocido {\bf{principio cosmológico}} con el cual nos atrevemos a afirmar que: ``no estamos ubicados en ningún lugar especial en el Universo'', no hay preferencia, por lo que cualquier observador fundamental ubicado en cualquier lugar del Universo pero en la misma época cósmica observa las mismas características a grande escala que nosotros, i.e., la misma expansión de Hubble de la distribución de galaxias, la misma radiación del CMB isotrópica, la misma estructura esponjosa a gran escala de la distribución de galaxias y vacíos (red cósmica), y así sucesivamente. 
+    En un sistema de galaxias que se expanden, cada observador en cada galaxia individual observa el mismo flujo de Hubble en la misma época, así, todos tienen derecho a creer que son el centro de un Universo en expansión.
+    
+     
+        
+    En cuanto a la geometría, a finales del siglo XVIII se estaban considerando los espacios no euclidianos. Los padres de la geomtría no euclidiana fueron Nikolai Ivanovich Lobachevsky en Rusia y János Bolyai en Transilvania (Lobachevsky, 1829; Bolyai, 1830). Lobachevsky resolvió el problema de la existencia de geometrías no euclidianas, así la misma se puso sobre una base teórica sólida por los estudios de Bernhard Riemann.
+    
+    \newpage
+    
+    \begin{wrapfigure}[16]{r}{0.4\linewidth}                                     \includegraphics[width=0.45\textwidth]{superficie_esferica_pp152.png}
+                \caption{\footnotesize{Suma de los ángulos de un triángulo en la superficie de una esfera}}
+                \label{fig:2.4} 
+        \end{wrapfigure}
+    
+    En la figura (\ref{fig:2.4}) se tiene el caso más simple de la geometría curvada en 2 dimensiones, la superficie de una esfera: un triángulo con dos líneas (con $90^{\circ}$ entre ellas) que parten del polo norte y llegan hasta el ecuador, y una tercera línea que se dibuja sobre el ecuador. Estas líneas son la distancia más corta entre las tres esquinas del triángulo. En geometría curva son geodésicas. Si el radio de una esfera es $R_c$, el área superficial del triángulo ABC es $A= \theta R_c$. Variando el ángulo se obtiene para $\theta = 90^{\circ} \rightarrow{A = \pi R_c^2/2}$ donde la suma de los ángulos del triángulo es $270º$; y si $\theta=0º$ entonces el área también es cero y la suma de los ángulos $180º$. Así, la diferencia de la suma de los ángulos de $180^{\circ}$ es proporcional al área del triángulo:
+        
+        \vspace{0.4cm}
+        
+            $$(\textrm{suma de los ángulos del triángulo} - 180^{\circ} \propto \text{área del triángulo},$$
+            
+        la cual es una propiedad general de los espacios curvos isotrópicos. 
+        
+ \subsection{La métrica Espacio - Tiempo para Espacios Isotrópicos Curvos} \label{sec:2.2.2} 
+
+    La distancia entre dos puntos separados por $dx, dy, dz$ en un espacio plano viene representado por 
+    
+        \begin{equation} \label{eq:2.2.1} 
+            dl^2 = dx^2 + dy^2 + dz^2. 
+        \end{equation}
+    
+    Siendo el caso más simple de un espacio curvo bidimensional isotrópico la superficie de una esfera, es conveniente utilizar un sistema coordenado polar para describir posiciones en la superficie (ver fig. \ref{fig:2.4}) que para el caso, las coordenadas ortogonales son $\theta$ y $\phi$ y el aumento de la distancia $dl$ entre dos puntos en dicha superficie es:
+    
+        \begin{equation} \label{eq:2.2.2} 
+            dl^2 = R_c^2 d\theta^2 + R_c^2 \sin^2 \theta d\phi^2,
+        \end{equation}
+        
+    donde $R_c$ es el radio de curvatura de la superficie del espacio bidimensional, i.e., el radio de la esfera. La ec. (\ref{eq:2.2.2}) es la {\textit{métrica de la superficie bidimensional}} y puede generalizarse como:
+    
+        \begin{equation} \label{eq:2.2.3}
+            dl^2 = g_{\mu \nu} dx^{\mu} dx^{\nu}, 
+        \end{equation}
+    
+    siendo $g_{\mu \nu}$ el {\textit{tensor métrico}} contenedor de toda la información acerca de la geometría intrínseca del espacio. Otros sistemas de coordenadas pueden definir las coordenadas de un punto en cualquier superficie bidimensional. Para un plano euclidiano:
+    
+        \begin{equation} \label{eq:2.2.4}
+            dl^2 = dx^2 +  dy^2,
+        \end{equation}
+
+    en polares
+
+        \begin{equation} \label{eq:2.2.5}
+            dl^2 = dr^2 + r^2 d\phi^2.
+        \end{equation}
+        
+    Gauss mostró que con el tensor métrico $g_{\mu \nu}$ es posible determinar la curvatura intrínseca del espacio. Para tensores que pueden ser reducidos a la forma diagonal (ecs. \ref{eq:2.2.2}, \ref{eq:2.2.4}, \ref{eq:2.2.5}) la curvatura intrínseca viene dada por:
+    
+         \begin{align*}
+        \kappa & = \frac{1}{2 g_{11} g_{22}} \left\{ - \frac{\partial^2g_{11} }{\partial x_2^2} - \frac{\partial^2g_{22} }{\partial x_1^2} + \frac{1}{2 g_{11}} \left[ \frac{\partial g_{11} }{\partial x_1} \frac{\partial g_{22} }{\partial x_1} +   \left( \frac{\partial g_{11} }{\partial x_2} \right)^2 \right] 
+        + \frac{1}{2 g_{22}} \left[ \frac{\partial g_{11} }{\partial x_2} \frac{\partial g_{22} }{\partial x_2} + \left( \frac{\partial g_{22} }{\partial x_1} \right)^2 \right] \right\}. 
+        \end{align*}
+    
+    $\kappa$ se conoce como la {\textit{curvatura gaussiana}} del bi-espacio. La extención a tres espacios isotrópicos es sencilla si mantenemos que cualquier sección bidimensional a través de un espacio tridimensional isotrópico debe ser un bi-espacio isotrópico y ya el tensor métrico par este caso es conocido. 
+    
+    \newpage
+    
+    
+        \begin{wrapfigure}[16]{r}{0.4\linewidth}                                             \includegraphics[width=0.5\textwidth]{superficie_esferica_pp156_angulos.png}
+            \caption{\footnotesize{$\varrho$ es la distancia radial alrededor de la esfera desde el polo y el ángulo $\phi$ mide los desplazamientos angulares en el polo.}}
+            \label{fig:2.5} 
+        \end{wrapfigure}
+    
+    Fue mencionado que para un bi-espacio isotrópico, las coordenadas adecuadas son las polares esféricas. De la figura (\ref{fig:2.5}), la distancia alrededor del arco de un gran círculo desde el punto $O$ hasta $P$ es $R_c \theta$, por lo que la métrica se escribe:
+    
+    
+        \begin{equation} \label{eq:2.2.6} 
+            dl^2 = d\varrho^2 + R_c^2 \sin^2\left(\frac{\varrho}{R_c} \right) d\phi^2,
+        \end{equation}
+
+    donde $\varrho$ es la distancia más corta entre $0-P$  en la superficie de una esfera ya que es parte de un gran  círculo. De esta manera, estamos hablando de una {\textit{distancia geodésica}} en el espacio curvo isotrópico. Recordemos que en espacios curvos las geodésicas juegan el rol de las líneas rectas. 
+    
+    Ahora, (\ref{eq:2.2.6}) puede ser reescrita como: 
+
+        \begin{equation} \label{eq:2.2.7} 
+                x = R_c \sin \left(\frac{\varrho}{R_c} \right).
+        \end{equation}
+    
+    Hallando $dx^2$ con $$d\varrho^2 = \frac{dx^2}{1-\kappa x^2},$$
+    la métrica puede ser escrita como: 
+    
+        \begin{equation} \label{eq:2.2.8} 
+            dl^2 = \frac{dx^2}{1-\kappa x^2} + x^2d\phi^2.
+        \end{equation}
+    
+    Recordando que $\kappa = 1/R_c^2$, tres casos deben ser considerados:
+    
+        \begin{equation}
+            \label{eq:2.2.9}
+            \kappa  = \left\{
+	            \begin{array}{ll}
+		            > 0      & {\text{espacio esférico}},, \\
+		            = 0 & R_c \rightarrow{\infty}, \hspace{0.4cm}  {\text{espacio plano}}, \\
+		            < 0     & {\text{espacio hiperbólico}},
+	            \end{array}
+	       \right.
+        \end{equation}
+    
+        donde $\kappa = 0$ recupera el espacio euclidiano. Para el incremento espacial en un espacio tridimensional curvo recordemos que cualquier sección bidimensional a través de un tri-espacio isotrópico debe ser un espacio isotrópico de dos dimensiones donde la métrica puede ser ec. (\ref{eq:2.2.6}) o (\ref{eq:2.2.8}). En coordenadas polares esféricas, el desplazamiento angular general perpendicular a la dirección radial es 
+        
+            \begin{equation} \label{eq:2.2.10}
+                d\phi^2 = d\theta^2 +  \sin^2 \theta d\phi^2.
+            \end{equation}
+            
+        (Con $\theta$ y $\phi$ diferentes a los usados en la fig. \ref{fig:2.5}). De esta manera, se puede escribir el incremento espacial de (\ref{eq:2.2.6}) o (\ref{eq:2.2.8}) como sigue
+        
+            \begin{align}
+                dl^2 & = d\varrho^2 + R_c^2 \sin^2\left(\frac{\varrho}{R_c} \right) [d\theta^2 +  \sin^2 \theta d\phi^2], \label{eq:2.2.11} \\
+                dl^2 &  =  \frac{dx^2}{1-\kappa x^2} + x^2[d\theta^2 +  \sin^2 \theta d\phi^2] \label{eq:2.2.12} .
+            \end{align}
+            
+        De esta manera, la {\textit{métrica de Minkowski}} para un tri-espacio isotrópico viene escrita como: 
+
+            \begin{equation} \label{2.2.13} 
+                \boxed{ds^2 = dt^2 - \frac{1}{c^2} dl^2,}
+            \end{equation}
+
+        con $dl$ el de las expresiones (\ref{eq:eq:2.2.11} o \ref{eq:2.2.12}). Aunque $x$ y $\varrho$ son medidas de distancias equivalente, su significado físico es bastante distinto. Es ahora posible derivar la {\textit{métrica de Robertson -  Walker}}.
+        
+ \subsection{Métrica de Robertson - Walker} \label{sec:2.2.3}
+ 
+    Queremos aplicar la métrica de Minkowski, ec. (\ref{2.2.13}), a modelos de mundo homogéneos e isotrópicos. Para eso, debemos recurrir a:
+
+        \begin{enumerate}
+            \item Principio cosmológico: A primera aproximación, el Universo es isotrópico y homogéneo en la época actual.
+            \item Observadores fundamentales: quienes se mueven de modo tal que el Universo siempre parece isotrópico para ellos. 
+            \item Tiempo cósmico: cada uno de estos observadores lleva un reloj y el tiempo propio medido por ese reloj es lo que se conoce como {\textit{tiempo cósmico}}.
+        \end{enumerate}
+        
+    Recordemos que según el postulado de Weyl, las geodésicas de todos los observadores se reunen en un punto en el pasado y el tiempo cósmico puede ser medido desde esa época de referencia. 
+    
+    Ahora bien, considerando las ecs. (\ref{eq:eq:2.2.11}) y (\ref{eq:2.2.13}), podemos escribir la métrica como:
+    
+        \begin{equation} \label{eq:2.2.14}
+            \boxed{ds^2 = dt^2 - \frac{1}{c^2}( d\varrho^2 + R_c^2 \sin^2\left(\frac{\varrho}{R_c} \right) (d\theta^2 +  \sin^2 \theta d\phi^2)],}
+        \end{equation}
+
+    siendo $t$ el tiempo cósmico y $d\varrho$ un incremento de la distancia propia (la cual se ve afectada por la expansión del Universo) en la dirección radial. 
+    
+    Para un Universo en expansión, esta métrica presenta problemas. Ya que la luz viaja una velocidad finita, observamos todos los objetos astronómicos a lo largo de un cono de luz anterior centrado en la Tierra en la época actual $t_0$ (ver fig. \ref{fig:2.6b}). Así, cuando observamos objetos distantes, no los observamos en la época actual sino en un tiempo anterior $t_1$, cuando el Universo todavía era homogéneo e isotrópico, pero las distancias entre los observadores fundamentales eran menores y la curvatura espacial diferente. Significa entonces que la métrica (\ref{eq:2.2.14}) solo puede ser aplicada a un espacio curvo, isotrópico definido en una única época. 
+    
+    {\large{\textbf{Cono de Luz}}}
+    
+    Como una digresión, es importante aclarar acerca del cono de luz y su importancia dentro del marco de la relatividad especial y del Universo. 
+    
+    El espacio - tiempo consiste de tres elementos que son representados en un diagrama conocido como el {\textit{cono de luz}} (ver fig. \ref{fig:2.6a}). Estos son: 
+    
+        \begin{itemize}
+            \item Puntos que se encuentran en el espacio - tiempo y los cuales representan los {\textit{eventos}}, i.e., algo que ocurre en algún lugar, en algún momento. 
+            \item Líneas, que representan las {\textit{líneas de mundo}}, los observadores que se extienden desde el pasado hacia el futuro. Un observador recibe señales de luz que vienen del pasado y transmite señales de luz que salen al futuro. 
+            \item Geodésicas nulas que no son otra cosa que los {\textit{rayos de luz}}, que describen líneas a $45^{\circ}$ de la vertical. Para ellas, $ds^2 =0$. 
+        \end{itemize}
+        
+        Las líneas de mundo con un ángulo menor a $45^{\circ}$ de la vertical se conocen como {\textit{líneas temporaloides}} ({\textit{time-like}}), y los eventos están causalmente conectados. Así mismo, las que tienen un ángulo mayor a $45^{\circ}$ con respecto a la vertical son llamadas {\textit{líneas espacialoides}} ({\textit{space-like}}). Eventos sobre estas líneas están causalmente desconectados; no se pueden afectar mutuamente en sus respectivos conos de luz pasado y futuro ya que están separadas por una distancia mayor que la que la luz puede recorrer en el tiempo que los separa.  
+        
+        Para medir una distancia propia adecuada que pueda ser incluida en la métrica (\ref{eq:2.2.14})  se pueden alinear un conjunto de observadores fundamentales que estén entre la Tierra y la galaxia. Cada uno de estos observadores va a medir la distancia $d \varrho$ a su próximo observador en un tiempo cósmico particular. Al sumar todos estos $d \varrho$ se puede obtener una distancia adecuada que es medida en una sola época y  que sería posible incluir en la métrica (\ref{eq:2.2.14}). Lo que nosotros observamos son galaxias distantes en una época pasada, i.e., cómo eran en una época anterior, y no se sabe cómo proyectar sus posiciones relativas a nosotros en la época actual hasta que conozcamos la cinemática del Universo en expansión. Es por esto que la distancia depende de la elección del modelo cosmológico que se considere.
+        
+        En una expansión uniforme la distancia entre dos observadores fundamentales, $i,j$ en dos épocas $t_1$ y $t_2$ cambia de manera que 
+
+    \begin{align} \label{2.2.15}
+        \frac{\varrho_i(t_1)}{\varrho_j(t_1)} & = \frac{\varrho_i(t_2)}{\varrho_j(t_2)} = {\text{constante}} \notag \\
+        \frac{\varrho_i(t_1)}{\varrho_i(t_2)} & = \frac{\varrho_j(t_2)}{\varrho_j(t_2)} = ... =  {\text{constante}} = \frac{a(t_1)}{a(t_2)}.
+    \end{align}
+    
+	    
 	\begin{figure}[h]
 		\centering
     	\begin{subfigure}{\textwidth}
-    		\begin{subfigure}{0.5\textwidth}
-    		    \includegraphics[width=\textwidth]{imagenes/null.pdf}
-        		\refstepcounter{subfigure}\label{fig:nullcines}
+    		\begin{subfigure}{0.4\textwidth}
+    		    \includegraphics[width=\textwidth]{light_cone_harrison_pp208.png}
+        		\refstepcounter{subfigure}\label{fig:2.6a}
     		\end{subfigure}
-    		\begin{subfigure}{0.5\textwidth}
-    		    \includegraphics[width=\textwidth]{imagenes/nullsub.pdf}
-        		\refstepcounter{subfigure}\label{fig:subini}
+    		\begin{subfigure}{0.4\textwidth}
+    		    \includegraphics[width=\textwidth]{cono_luz_pp159.png}
+        		\refstepcounter{subfigure}\label{fig:2.6b}
     		\end{subfigure}    		
     	\end{subfigure}
-    		\begin{subfigure}{0.5\textwidth}
-    		    \includegraphics[width=\textwidth]{imagenes/nullsupra.pdf}
-        		\refstepcounter{subfigure}\label{fig:supraini}
-    		\end{subfigure}    	
-		\caption{En (a) se tienen representados lo nullclines del modelo de Chialvo para $a = 0\text{.}89 , b = 0\text{.}6 ,c = 0\text{.}28 ,k = 0\text{.}02$,junto con una respuesta ante una perturbación a la izquierda del nullcline de $x$ en (b) y a la derecha en (c)}
-		\label{fig:nullinitial}
+		\caption{Izquierda: Espacio de la relatividad especial contiene puntos (eventos), líneas de mundo (cadenas de eventos y cada evento tiene conos de luz), y rayos de luz. Derecha: Diagrama de espacio - tiempo que ilustra la definición de la distancia de la coordenada radial comovil.}
 	\end{figure}
-	Es evidente que una respuesta donde se observe un potencial de acción o no, depende de la magnitud de la perturbación. En el
-	caso de una recuperación normal, luego de la perturbación, la trayectoria de las variables de estado se acerca de manera
-	monótona al punto de equilibrio. Sin embargo se debe hacer la distinción en el caso de una recuperación supernormal de la
-	excitabilidad, la cual corresponde a una aproximación oscilatoria hasta el punto de equilibrio. En el modelo de Chialvo este
-	comportamiento se puede observar para $k > 0.02$. Por ejemplo la figura \ref{fig:supernitial} muestra la evolución del sistema
-	para $k=0\text{.}29$ que corresponde a que el punto de equilibrio es ahora un foco, como se ve en la figura \ref{fig:superfase}
-	en donde las trayectorias del sistema se acercan al punto de equilibrio en espiral, en la figura \ref{fig:superx} se tiene la
-	evolución temporal de la variable de estado $x$ ante la aplicación de una perturbación de magnitud $\varepsilon = 0.015$, en
-	las iteraciones $t=2,40,60\text{ y }80$. Aunque todas debieran tener una respuesta sin potencial de acción , se ve que para el
-	caso de la iteración en $t=60$ ocurre un potencial de acción. Esto se debe a que esta perturbación fue aplicada cuando ocurre
-	una pequeña oscilación en la variable estado $x$.
 
-        \begin{figure}[h]
-        \centering
-            \begin{subfigure}{\textwidth}
-             	\begin{subfigure}{0.5\textwidth}
-                		\includegraphics[width=\textwidth]{imagenes/superX.pdf}
-                		\refstepcounter{subfigure}\label{fig:superx}
-                 \end{subfigure}
-                 \begin{subfigure}{0.5\textwidth}
-                		\includegraphics[width=\textwidth]{imagenes/nullsuper.pdf}
-                		\refstepcounter{subfigure}\label{fig:superfase}
-            		\end{subfigure}           
-            \end{subfigure}   
-        \caption{En (a), se puede observar que para la iteración $t=60$, ocurre el potencial de acción. Y en (b) se ve que esto ocurre, debido a que la iteración $t=60$ se movió para posicionarse por encima del umbral, aunque se le haya aplicado una perturbación de la misma intensidad.}
-        \label{fig:supernitial}
-    \end{figure}
-	Para un incremento aun mayor del parámetro $k$, por ejemplo $k=0\text{.}03$, coexisten dos comportamientos en el espacio de
-	fases, un foco estable y un ciclo límite. Que las trayectorias converjan a alguno de los dos atractores depende de las 
-	condiciones iniciales. En la figura \ref{fig:osci}, se puede ver que debido a que estos dos comportamientos coexisten, 
-	es posible un cambio entre estas dos soluciones, se aplica una perturbación sacando a las variables de estado del dominio de
-	atracción del ciclo límite y llevándolas al dominio de atracción del foco, fenómeno que es llamado “Aniquiliacion”, y se ha
-	visto en varios experimentos:  En los axones de un calamar gigante, los modelos de lo nervios y células cardiacas
-	\cite{best1979null,kraepelin1981winfree}.
+    En modelos isotrópicos, $a(t)$ representa una función universal conocida como {\bf{factor de escala}}, la cual explica cómo la distancia entre cualquiera de los dos observadores fundamentales cambia con el tiempo cósmico $t$. Si tomamos $a(t) = 1$ para la época presente, $t_0$, y renombramos el valor de $\varrho$ en el presente como $r$, (\ref{2.2.15}) se escribe como
+
+        \begin{equation} \label{eq:2.2.16} 
+            \varrho (t) = a(t)r,
+        \end{equation}
+
+    donde $r$ lleva la etiqueta de distancia, la cual está unida a una galaxia u observador fundamental durante todo el tiempo y recibe el nombre de {\bf{coordenada de distancia radial comóvil}}, donde el término ``comóvil'' indica que no se ve afectada por la expansión del Universo. La variación en la distancia propia en el Universo en expansión es $a(t)$. Las distancias propias perpendicular a la línea de visión también pueden cambiar por un factor $a$ entre $t_0$ y $t$, a causa de la isotropía y homogeniedad del modelo,
+    
+        \begin{equation} \label{2.2.17} 
+            \frac{\Delta l(t)}{\Delta l(t_0)} = a(t).
+        \end{equation}
+
+    De la métrica (\ref{eq:2.2.14}) 
+
+    \begin{align}
+        a(t) & = \frac{R_c(t) \sin[\varrho/R_c(t)] d \theta}{R_c(t_0) \sin[r/R_c(t_0)] d \theta}, \label{2.2.18} \\
+        \frac{R_c(t)}{a(t)} \sin \left[\frac{a(t)r}{R_c(t)} \right] & = R_c(t_0) \sin \left[\frac{r}        {R_c(t_0)} \right] \label{2.2.19},
+    \end{align}
+
+    válido siempre que 
+    
+        \begin{equation} \label{eq:2.2.20} 
+            R_c (t) = a(t) R_c (t_0),
+        \end{equation} 
+
+    de aquí que, para conservar la isotropia y homegeindad, {\bf{la curvatura del espacio cambia a medida que el Universo se expande}} como $k = R_c^{-2} \propto a^{-2}$.
+    
+    Si ahora el radio de curvatura de la geometría del espacio $R_c$ en la época presente lo etiquetamos como R'
+    
+        \begin{equation} \label{eq:2.2.21} 
+            R_c (t) = a(t) R'.
+        \end{equation}
+        
+    Sustituyendo (\ref{eq:2.2.16}) y (\ref{eq:2.2.20}) en la métrica (\ref{eq:2.2.14})
+
+    \begin{equation} \label{eq:2.2.22} 
+        \boxed{ds^2 = dt^2 - \frac{a^2(t)}{c^2} [dr^2 + R'^2 \sin^2(r/R')(d \theta^2 + \sin^2 \theta d\phi^2)],}
+    \end{equation}
+
+    obtenemos la {\bf{métrica de Robertson - Walker}}, la cual contiene dos incognitas: 
+
+        \begin{enumerate}
+            \item La función desconocida pero etiquetada como el factor de escala $a(t)$, que describe la dinámica del Universo,
+            \item La constante, también desconocida, $R'$, la cual describe la curvatura espacial del Universo en la época presente. 
+        \end{enumerate} 
+
+    Si se usa la {\bf{distancia de diámetro angular comóvil}}: $r_1 = R' \sin(r/R')$, la métrica puede ser escrita como:
+    
+        \begin{equation} \label{eq:2.2.23} 
+            ds^2 = dt^2 - \frac{a^2(t)}{c^2} \left[ \frac{dr_1^2}{1 - \kappa r_1^2} + r_1^2 (d\theta^2 + \sin^2 \theta d\phi^2) \right],
+        \end{equation}
+        
+    siendo ahora $\kappa = 1/R'^2$. Además, por un reescalamiento adecuado de la coordenada $r_1$: $\kappa r_1^2=r_2^2$, la métrica se escribe:
+
+        \begin{equation} \label{eq:2.2.24} 
+            ds^2 = dt^2 - \frac{R_1^2(t)}{c^2} \left[ \frac{dr_2^2}{1 - \kappa r_2^2} + r_2^2 (d\theta^2 + \sin^2 \theta d\phi^2) \right],
+        \end{equation}
+    
+    donde $\kappa = +1, 0 -1$ para universos con geometría esférica, plana o hiperbólica. En este reescalamiento $R_1(t)= R_c(t_0) a= R'a$ por lo que $R_1(t)$ en la época presente es $R'$ más bien que la unidad. 
+    Las métricas (\ref{eq:2.2.22}), (\ref{eq:2.2.23}) y (\ref{eq:2.2.24}) pueden definir el intervalo invariante $ds^2$ entre eventos en cualquier época o lugar en el Universo en expansión. 
+    
+    Finalmente, vamos a repasar algunos aspectos importantes:
+
+        \begin{enumerate}
+
+            \item El {\bf{tiempo cósmico $t$}} es el tiempo medido por un reloj llevado por el observador fundamental,
+            \item {\bf{$r$ es la coordenada de distancia radial comóvil}} que está fija a una galaxia para siempre y que es la distancia propia que tendría la galaxia si sus líneas de mundo fueran proyectadas hacia adelante a la época $t_0$ y sus distancias medidas en ese tiempo. 
+            \item $a(t)dr$ es el {\bf{elemento de distancia propia (geodésica) en la dirección radial en la época}} $t$. 
+            \item $a(t) [R'\sin(r/R')] d\theta = a(t) r_1 d\theta$ es el {\bf{elemento de distancia propia perpendicular a la dirección radial subtendida por el ángulo}} $d\theta$ en el origen. 
+            \item $a(t) [R'\sin(r/R')] \sin \theta d\phi = a(t) r_1 \sin \theta d\phi$ es el {\bf{elemento de distancia propia en la dirección}} $\phi$.
+        
+    \end{enumerate} 
+    
+      No sabemos nada acerca de la física que gobierna la tasa de expansión de Universo; sin embargo, $a(t)$ absorbe este fenómeno todavía desconocido. 
+      
+
+\section{Observaciones en Cosmología}
+
+  \subsection{Corrimiento al Rojo Cosmológico} \label{sec:2.3.1} 
+
+    Cuando hablamos del {\textit{corrimiento al rojo cosmológico}}, nos referimos al desplazamiento de las líneas espectrales hacia longitudes de onda más grandes asociadas a la expansión isotrópica del sistema de galaxias. Así, el corrimiento al rojo $z$ es definido como
+
+        \begin{equation} \label{eq:2.3.1}
+            z = \frac{\lambda_0 - \lambda_e}{\lambda_e},
+        \end{equation}
+
+    siendo $\lambda_0$ la longitud de onda observada y $\lambda_e$ la longitud de onda de la línea emitida. Si $z$ fuera interpretada como una velocidad de recesión $v$ de una galaxia, $z$ y $v$ serían relacionadas por el desplzamiento Doppler Newtoniano
+
+        \begin{equation} \label{eq:2.3.2} 
+            v= cz,
+        \end{equation}
+
+    que fue utilizada por Hubble para derivar la relación velocidad-distancia, $v=H_0 r$.
+    
+    En cosmología, el corrimiento al rojo tiene un significado más profundo. Por ejemplo, si consideramos un paquete de ondas de frecuencia $\nu_1$ emitido entre los tiempos cósmicos $t_1$ y $t_1 +  \Delta t_1$ de una galaxia distante, y es recibido por un observador en la época presente $t_0$ y $t_0 + \Delta t_0$, la señal se propaga a lo largo de {\bf{conos nulos}}, $ds^2=0$, y si además $d\theta = d\phi = 0$, la métrica (\ref{eq:2.2.22}) puede escribir como:
+    
+        \begin{equation} \label{eq:2.3.3}
+            dt = - \frac{a(t)}{c} dr \hspace{0.4cm} \frac{c dt}{a(t)} = -dr,
+        \end{equation} 
+        
+    con $a(t) dr$ el {\bf{intervalo de distancia propia en el tiempo cósmico}} $t$. Para el borde delantero del paquete de ondas 
+
+        \begin{equation} \label{eq:2.3.4} 
+            \int_{t_1}^{t_0} \frac{cdt}{a(t)} = - \int_r^0{dr}.
+        \end{equation}
+        
+    El final del paquete de ondas debe viajar la misma distancia en unidades de la coordenada de distancia comovil ya que $r$ es fija a la galaxia para siempre. Así:
+
+        \begin{align} 
+            \int_{t_1 + \Delta t_1}^{t_0 + \Delta t_0}{ \frac{cdt}{a(t)}} & = - \int_r^0{dr}, \label{eq:2.3.5}  \\
+            \int_{t_1}^{t_0}{ \frac{cdt}{a(t)} +  \frac{c \Delta t_0}{a(t_0)} -\frac{c \Delta t_1}{a(t_1) }}   & =  \int_{t_1}^{t_0}{ \frac{cdt}{a(t)}}. \label{eq:2.3.6} 
+        \end{align}
+     
+     
+    Y ya que $a(t_0) = 1$
+
+        \begin{equation} \label{eq:2.3.7} 
+            \boxed{\Delta t_0 = \frac{\Delta t_1}{a(t_1)}.}
+        \end{equation}
+
+
+    Esta es la expresión para el fenómeno de la {\bf{dilatación del tiempo}} (equivalente al fenómeno de la relatividad especial). Galaxias distantes son observadas en algún tiempo cósmico anterior $t_1 < 1$, por lo que se observa que los fenómenos tardan más en nuestro marco de referencia que en el de la fuente. Si $\Delta t_1 = \nu_1^{-1}$ es el periodo de las ondas emitidas y  $\Delta t_0 = \nu_0^{-1}$ el período observado, (\ref{eq:2.3.6}) puede ser escrita como
+    
+        \begin{equation} \label{eq:2.3.8} 
+            \nu_0 = \nu_1(t_1) a(t_1),
+        \end{equation}
+        
+    y haciendo uso de (\ref{eq:2.3.1}) y (\ref{eq:2.3.8})
+    
+        \begin{align}
+            z & = \frac{\lambda_0 - \lambda_e}{\lambda_e} = \frac{\lambda_0 }{\lambda_e} - 1 = \frac{\nu_1}{\nu_0} - 1, \label{eq:2.3.9}  \\
+            z + 1 & = \frac{\nu_1}{\nu_0} = \frac{1}{a(t_1)} \label{eq:2.3.10}, 
+        \end{align}
+        
+    finalmente 
+    
+        \begin{equation} \label{eq:2.3.11}
+            \boxed{a(t_1)  = \frac{1}{z+1}.} 
+        \end{equation}    
+        
+    
+    Esta última expresión representa un resultado muy importante es cosmología y es otra manera de expresar el corrimiento al rojo; una {\bf{medida del factor de escala del Universo cuando la fuente emitió la radiación}}. 
+    Cuando observamos una galaxia con desplazamiento al rojo $z = 1$, el factor de escala del Universo cuando se emitió la luz fue $a (t) = 0.5$, i.e., las distancias entre observadores fundamentales (o galaxias) eran la mitad de sus valores actuales. 
+    
+    De (\ref{eq:2.3.4}) podemos obtener una expresión para la {\bf{coordenada de distancia radial comovil}} $r$:
+
+    \begin{equation} \label{eq:2.3.12}
+        r = \int_{t_1}^{t_0}{\frac{c dt }{a (t)}}.
+    \end{equation} 
+
+    $r$ {\bf{es una distancia artificial que depende de cómo el Universo se ha expandido entre la emisión y recepción de la radiación}}.
+    
+    La dilatación del tiempo, expresión (\ref{eq:2.3.7}), está relacionada con las supernovas tipo 1a (SN 1a). La estrecha dispersión en sus magnitudes absolutas que tiene exactamente la misma curva de luz  (la variación en el tiempo en sus luminosidades durante la explosión de la SN) ha hecho que estos objetos sean herramientas útiles en cosmología. Las grandes luminosidades de las SN tipo 1a hace que estas puedas ser observadas a altos corrimiento al rojo. 
+    
+    \subsection{Ley de Hubble} 
+
+    La ley de Hubble puede escribirse como: 
+
+
+        \begin{equation} \label{eq:2.3.13} 
+            \frac{\varrho}{dt} = H\varrho,
+        \end{equation}
+
+    con $\varrho$ la distancia propia, $\varrho = a(t) r$. Usamos $H$ en vez de $H_0$ porque vamos a considerar la {\bf{``constante de Hubble''}} en cualquier época y no en el presente. Sustituyendo $\varrho = a(t) r$,
+    
+        \begin{align}
+            r\frac{da(t)}{dt} & = Ha(t)r,  \label{eq:2.3.14} \\
+            \boxed{H = \frac{\dot{a}}{a}.} \label{eq:2.3.15} 
+        \end{align}
+
+    Si consideramos la constante de Hubble en el tiempo presente, $t= t_0$, $a=1$, entonces 
+    
+        \begin{equation} \label{eq:2.3.16}
+            \boxed{H_0 = (\dot{a})_{t_0}.}
+        \end{equation}
+        
+    La {\bf{constante de Hubble define la tasa de expansión del Universo en el presente}}. Para cualquier época podemos definir: 
+
+        \begin{equation} \label{eq:2.3.17}
+            \boxed{H(t) = \frac{\dot{a}}{a}.}
+        \end{equation}
+    
+ \subsection{Diámetros angulares}
+
+    En la sección anterior, (\ref{sec:2.3.1}) hemos considerado únicamente la parte radial. Siguiendo con la métrica de Roberton - Walker 
+
+        $$ds^2 = dt^2 - \frac{a^2(t)}{c^2} [dr^2 + R'^2 \sin^2(r/R')(d \theta^2 + \sin^2 \theta d\phi^2)],$$
+    
+    consideraremos ahora el componente espacial relevante $d\theta$. La longitud propia $d$ de un objeto en el desplazamiento al rojo $z$, correspondiente al factor de escala $a(t)$ viene dado por el incremento de la longitud propia perpendicular a la dirección radial:
+  
+        \begin{align}
+            d & = a(t) R' \sin \left(\frac{r}{R'} \right) \Delta \theta = a(t) D \Delta \theta = \frac{D \Delta \theta}{1+z}, \notag \\
+            \Delta \theta & = \frac{d(1+z)}{D},\label{eq:2.3.18}
+        \end{align}
+        
+    donde distinguimos una nueva {\textit{medida de distancia}} $D = R' \sin(r/R')$. Para pequeños $z$, $z << 1, r <<R'$ la ec. (\ref{eq:2.3.18}) se reduce a la relación euclidiana $d = r \Delta \theta$. Entonces también puede ser escrita como:
+
+        \begin{equation} \label{eq:2.3.19} 
+            \Delta \theta = \frac{d}{D_A},
+        \end{equation}
+        
+    donde se ha definido una nueva medida $D_A$ conocida como {\bf{distancia de diámetro angular}}.
+    
+    Otro cálculo importante es el del {\bf{diámetro angular de un objeto que continúa participando en la expansión}} como es el caso de una perturbación infinitesimal en la expansión del Universo. Un ejemplo es el diámetro angular que estructuras a gran escala presentes en el Universo actual habrían subtendido en una época anterior, e.g., la recombinación, si simplemente se hubiesen expandido con el Universo. Este se usa para calcular tamaños físicos correspondientes a las escalas angulares de las fluctuaciones observadas en la radiación del CMB. Si el tamaño de un objeto es actualmente de $d(t_0)$ y se expandió con el Universo, su tamaño físico en el desplazamiento al rojo fue de
+
+        $$d(t_0) a(t)=  \frac{d(t_0)}{(1+z)}$$,
+    
+    por lo tanto, ese objeto subtendió un ángulo
+
+    \begin{equation} \label{eq:2.3.20}
+        \Delta \theta = \frac{d(t_0)}{D}.
+    \end{equation}
+    
+\subsection{Intensidades Aparente}
+
+    Se tiene una fuente con luminosidad $L(\nu_1), (\mathrm{W Hz^{-1}})$, y con un corrimiento al rojo $z$. $L$ es la {\textit{energía total emitida sobre $4 \pi$ estereorradián por unidad de tiempo por unidad de intervalo de frecuencia}}. Siendo $\nu_0$ la frecuencia en la época presente $t_0$, queremos calcular la densidad de flujo $S(\nu_0)$ de la fuente en la frecuencia $\nu_0$ en que esta se observa. Específicamente, ¿cuál es la energía recibida por unidad de tiempo, por unidad de área, por unidad de ancho de banda, en unidades de $\mathrm{W m^{-2} Hz^{-1}}$. De ecs. (\ref{eq:2.3.8}) y (\ref{eq:2.3.11})
+    
+         $$\nu_0 = a(t_1) \nu_1 = \frac{1}{z+1}.$$
+         
+    Podemos suponer que la fuente emite $N(\nu_1)$ fotones con energía $h \nu_1$, en el ancho de banda $\nu_1, \nu_1 + \Delta \nu_1$ en el intervalo de tiempo propio $\Delta t_1$. De esta manera $L(\nu_1)$ es
+
+        \begin{equation} \label{eq:2.3.21}
+            L(\nu_1) = \frac{N(\nu_1) h \nu_1 }{\Delta \nu_1 \Delta t_1}.
+        \end{equation}
+        
+    Imagine que la fuente, en un tiempo $t_1$, es el centro de una ``esfera'' y que los fotones que ha emitido están distribuidos sobre una ``capa'' que rodea a la esfera. Cuando esta capa de fotones llega al observador, en una época $t_0$, cierta cantidad de ellos son interceptados por un telescopio. En $t_0$, los fotones observados tienen frecuencia $\nu_0 = a(t_1) \nu_1$ (ec. \ref{eq:2.3.8}), un intervalo de tiempo propio $ \Delta t_0 = \Delta t_1/a(t_1)$ (ec. \ref{eq:2.3.37}) y en el ancho de banda $ \Delta \nu_0 = a(t_1) \nu_1$.
+    
+    Para conocer cuántos fotones están sobre esta ``capa'' que rodea la esfera entre la época $t_1$ y $t_0$ es necesario relacionar el diámetro del telescopio $\Delta l$  al diámetro angular $\Delta \theta$ que subtiende en la fuente en la época $t_1$. De ec. (\ref{eq:2.3.18}), si consideramos que para un tiempo presente, $t_0$, $a(t_0) = 1$
+    
+        \begin{equation} \label{eq:2.3.22}
+            \Delta l = D \Delta \theta,
+        \end{equation}
+    
+    siendo $\Delta \theta$ el ángulo medido por un observador fundamental, el cual se encuentra en la fuente. Si ahora introducimos la noción de ángulo sólido $d\Omega$, podemos considerar cómo los fotones que la fuente ha emitido se extienden sobre $d \Omega$, como se observa desde la fuente en la geometría curva. Si se supone que el Universo no se expande, el área superficial sobre la cual se observan los fotones en un tiempo $t$ después de su emisión se escribe como: 
+
+        \begin{equation} \label{eq:2.3.23} 
+            dA = R_c^2 \sin^2 \frac{x}{R_c} d\Omega,
+        \end{equation}
+
+     siendo $x = ct$. Por otro lado, si el Universo se expande, el radio de curvatura $R_c$ cambia como el Universo lo haga, y en lugar de $x/R_c$, tendríamos 
+     
+        \begin{equation} \label{eq:2.3.24} 
+            \frac{1}{R'} \int_{t_1}^{t_0}{\frac{c dt}{a}} =     \frac{r}{R'},
+        \end{equation}
+     
+     con $r$ la coordenada de distancial radial comóvil. Sustituyendo (\ref{eq:2.3.24}) en $dA$
+
+    \begin{equation} \label{eq:2.3.25} 
+        dA = R'^2 \sin^2 \frac{r}{R'} d\Omega.
+    \end{equation} 
+    
+    Consideraremos el diámetro del telescopio como lo vemos desde la fuente como $\Delta l = D \Delta \theta$. Recordemos que las distancia comóviles toman en cuanta la expansión del Universo, a diferencia de las distancias propias. Por lo tanto, el área superficial del telescpio es $\pi \Delta l^2 / 4$ y el ángulo sólido subtendido por esta área superficial en la fuente es $d \Omega = \pi \Delta \theta^2/4$. El número de fotones incidentes sobre el telescopio en un tiempo $\Delta t_0$ es 
+    
+        \begin{equation} \label{eq:2.3.26} 
+            N (\nu_1) \frac{\Delta \Omega}{4 \pi},
+        \end{equation}
+     
+     
+    donde ahora ellos son observados con frecuencia $\nu_0$. De esta manera, podemos conocer la expresión para la densidad de flujo de la fuente, i.e., la cantidad de energía recibida por unidad de tiempo, por unidad de área, por unidad de ancho de banda. Esto es
+    
+        \begin{equation} \label{eq:2.3.27} 
+            S(\nu_0) = \frac{N (\nu_1) h \nu_0 \Delta \Omega} {4\pi \Delta t_0 \Delta \nu_0 (\pi/4)\Delta l^2 }.
+        \end{equation}
+    
+    Haciendo uso, nuevamente, de las ecs. (\ref{eq:2.3.7}) y (\ref{eq:2.3.8}), además de las relaciones de la luminosidad, (\ref{eq:2.3.21}) , y el diámetro del telescopio, (\ref{eq:2.3.22}), podemos expresar (\ref{eq:2.3.28}) como:
+    
+        \begin{align}
+            S( \nu_0) & = \frac{[N(\nu_1) h \nu_1 (t_1) a(t_1)] (\pi \Delta \theta^2/4)}{4 \pi [\Delta t_1/a(t_1)] [\nu_1 a(t_1)] (\pi/4)(D^2 \Delta \theta^2)}, \notag \\ 
+            \\
+            S(\nu_0) & = \frac{L(\nu_1) a(t_1)}{4\pi D^2} =\frac{L(\nu_1)}{4\pi D^2(1+z)}. \label{eq:2.3.29}
+        \end{align}
+    
+    (\ref{eq:2.3.29}) relaciona la intensidad observada $S(\nu_0)$ a la luminosidad intrínseca de la fuente $L(\nu_1)$. 
+    Para luminosidades y densidades de flujo {\bf{bolométricas}} se considera entonces la energía total emitida en un ancho de banda finito $\Delta \nu_1$ y que es recibida en el ancho de banda $\Delta \nu_0$. Se tiene
+    
+        \begin{align}
+            L_{bol}= L (\nu_1) \nu_1 & = 4 \pi D^2 S(\nu_0)(1+z) \times \Delta \nu_0 (1+z), \label{eq:2.3.30} \\
+            & = 4 \pi D^2 (1+z)^2 S_{bol}, \label{eq:2.3.31}
+        \end{align}
+        
+    de donde se desprende que 
+    
+        \begin{align}
+            S_{bol} & = S(\nu_0) \nu_0, \label{eq:2.3.32} \\
+            S_{bol}  & = \frac{L_{bol}}{4 \pi D^2 (1+z)^2} =  \frac{L_{bol}}{4     \pi D_L^2}. \label{eq:2.3.33} 
+        \end{align}
+    
+    Note la nueva cantidad $D_L =  D (1+z) $, la cual es conocida como la {\bf{distancia de luminosidad }} de la fuente. Esta cantidad $D_L$ que relaciona a $L_{bol}$ con $S_{bol}$ hace que la misma luzca como una ley del  del cuadrado inverso. 
+    
+    Es posible medir la densidad de flujo bolométrica en la presente época, $t_0$, si integramos la luminosidad bolométrica en cualquier ancho de banda adecuado siempre que se utilice el $z$  correspondiente. Así, 
+    
+        \begin{equation} \label{eq:2.3.34}
+            \sum_{\nu_0} S(\nu_0) \Delta \nu_0 = \frac{ \sum_{\nu_1} L(\nu_1) \Delta \nu_1 }{4 \pi D^2 (1+z)^2} =   \frac{\sum_{\nu_1} L(\nu_1) \Delta \nu_1}{4 \pi D_L^2}
+        \end{equation}
+        
+    Si se conoce el espectro de la fuente $L(\nu)$, esta última relación puede escribirse en términos de la luminosidad de la fuente en la frecuencia observada $\nu_0$. Esto es:
+    
+        \begin{equation} \label{eq:2.3.35} 
+            S(\nu_0) = \frac{L(\nu_0)}{4\pi D_L^2} \left[ \frac{L(\nu_1)}{L(\nu_0)}(1+z) \right]. 
+        \end{equation}
+        
+    El término entre corchetes se conoce como {\bf{Corrección-$K$}} y es utilizada para ``corregir'' las magnitudes aparentes de galaxias distantes por los efectos de desplazamiento al rojo de sus espectros cuando las observaciones son hechas a través de filtros estándar con una frecuencia de observación fija media $\nu_0$ (Sandage, 1961b). Así, la relación (\ref{eq:2.3.35}) puede escribirse en función de la magnitud absoluta, 
+    
+        $$M = cte - 2,5 \log_{10} L(\nu_0),$$ 
+        
+    y la aparente, 
+    
+        $$m = cte - 2,5 \log_{10} S(\nu_0),$$ 
+    
+    encontrándose que
+    
+        \begin{align}
+            M & = m - 5 \log_{10} (D_L) - K(z) - 2.5 \log_{10} (4\pi), \hspace{0.9cm} \label{eq:2.3.36} \textrm{donde} \\
+            K & = -2.5 \log_{10} \left[ \frac{L(\nu_1)}{L(\nu_0)}(1+z) \right]. \label{eq:2.3.37} 
+        \end{align}
+    
+     Esta corrección-$K$ es correcta para densidades de flujo y luminosidades {\textit{monocromáticas}}.
+     
+\subsection{Densidades Numéricas}
+    
+     Se quiere conocer la cantidad de objetos en un intervalo de corrimiento al rojo $z, \, z + dz$, y varias cosas sabemos: existe una relación uno a uno entre $r$ y $z$, siendo $r$ la {\bf{coordenada de distancia propia radial definida en la presente época}}, resultados que ya fueron dados en sec. (\ref{sec:2.2.2}), por lo que ya se conoce el número de objetos en el intervalo de distancia de coordenadas radial cómovil $r, \, r+dr$. El diagrama de espacio - tiempo (cono de luz, fig. \ref{fig:2.6b}) muestra cómo podemos conocer el número de objetos por trabajar en base a los volúmenes comóviles para la presente época. Para este caso, el radio de curvatura de la geometría curva es $R'$, así que el volumen de la concha esférica de grosor $dr$ en la coordenada de distancia comóvil $r$ es
+    
+        \begin{equation} \label{eq:2.3.38} 
+            dV = 4\pi R'^2 \sin^2 (r/R') dr = 4\pi D^2 dr,
+        \end{equation}
+    
+      donde identificamos a $R'^2 \sin^2 (r/R') = D^2$. Si $N_0$ es la densidad de objetos en el espacio actual y su número es conservado como el Universo se expande
+      
+        \begin{equation} \label{eq:2.3.39}
+            dN = N(z) dz = 4\pi N_0 D^2 dr. 
+        \end{equation}
+
+    Podemos afirmar que la ec. (\ref{eq:2.3.39}) da la densidad numérica de los objetos en el intervalo $z, z +dz$, asumiendo que la densidad numérica de objetos no cambia con la época cósmica. En el caso en que la densidad numérica de objetos sí cambiara con la época cósmica, e.g., existe una función que depende de $z$, $f(z)$, con $f(z=0) =1$ entonces la cantidad de objetos esperados en el intervalo $dz$ sería: 
+
+    \begin{equation} \label{eq:2.3.40} 
+        dN= n(z) dz = 4\pi N_0 F(z) D^2 dr
+    \end{equation}
+    
+\subsection{Edad del Universo}
+
+     Por último, para determinar la edad del Universo, etiquetada como $T_0$, vamos a recordar la ec. (\ref{eq:2.3.3}). Tenemos:
+     
+        \begin{equation} \label{eq:2.3.41}
+            dt = - \frac{a(t)}{c} dr \hspace{0.4cm} \frac{c dt}{a(t)} = -dr,
+        \end{equation} 
+
+    y de esta manera, 
+
+        \begin{equation} \label{eq:2.3.42} 
+            T_0 = \int_0^{t_0}{dt } = \int_0^{r_{max}}{\frac{a(t) dr}{c}},
+        \end{equation}
+    
+    donde $r_{{\text{máx}}}$ es la coordenada de la distancia comóvil correspondiente a $a=0$ y $z = \infty$.
+    
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    
+\section{Modelos de Mundo de Friedmann}
+    
+    
+  \subsection{Ecuaciones de Campo de Einstein}
+
+     Recapitulemos el {\textit{Principio Cosmológico}} y el {\textit{Postulado de Weyl}} (\ref{sec:2.2.1}), además de la {\textit{Teoría de la Relatividad General}}.
+   
+        \begin{itemize}
+            \item El principio cosmológico, el cual establece un Universo isotrópico, homogéneo y que además se expande uniformente a gran escala. ESto nos conduce también a la {\textit{métrica de Walker -  Robertson}}, (\ref{eq:2.2.22}). 
+            \item Weyl postula que existe una única línea de mundo que pasa a través de cada punto en el espacio - tiempo. Líneas que provienen de una singularidad en el pasado finito o infinito. Podemos entonces hablar de un fluido que se mueve a lo largo de estas líneas al ritmo en el que el Universo se expande, entonces su comportamiento es como el de un fluido perfecto, donde el {\textit{tensor de energía - momento}} es 
+            
+                 \begin{equation} \label{eq:2.4.1} 
+                    T_{\alpha \beta} = (\varrho_0 + p) u^{\alpha} u^{\beta} - p g^{\alpha \beta},
+                \end{equation}
+            
+            siendo $g^{\alpha \beta}$ el tensor métrica, $\varrho_0$ la densidad de masa propia del polvo,  $u^{\alpha}, u^{\beta}$ los cuadrivectores de la velocidad y $p$ el trimomento del polvo. 
+       
+            \item Por último, la relatividad general que relaciona el tensor energía - momento a las propiedades geométricas del espacio - tiempo a través de: 
+            
+            
+                \begin{empheq}[box=\fbox]{align} 
+                    R_{\mu \nu } - \frac{1}{2} g_{\mu \nu} R & = - \frac{8 \pi G}{c^2}   T_{\mu \nu},  \label{eq:2.4.2} \\ 
+                    \notag  \\ 
+                     R_{\mu \nu } - \frac{1}{2} g_{\mu \nu} R+ \Lambda  g_{\mu \nu} & = - \frac{8 \pi G}{c^2}   T_{\mu \nu}, \label{eq:2.4.3}
+                \end{empheq}
+                
+            donde  $R_{\mu \nu }$ es el {\textit{tensor de Ricci}}, $R$ el {\textit{escalar de Ricci o curvatura escalar}}, $G$ la constante de Gravitación Universal, $c$ la velocidad de la luz y $\Lambda$ la famosa {\textit{constante cosmológica}}, introducida por Einstein en 1917 con la intención de crear un Universo estático con geometría cerrada y que permitiera la incorporación del {\textit{Principio de Mach}} a la relatividad general (Einstein, 1917). Ernest Mach fue uno de los más influyentes críticos de los conceptos de espacio y tiempo absolutos Newtonianos. Este principio establecía que todas las fuerzas inerciales son debido a las distribuciones de materia en el Universo, el cual publicó luego en su {\textit{``Mechanics''}} y posteriormente Einstein llamó Principio de Mach (para una explicación más amplia consulte: Harrison E., "The Science of the Universe", pp: 236 - 239).
+            
+        \end{itemize} 
+
+    Estos tres ingredientes son fundamentales para la construcción de modelos cosmológicos estándar. La relatividad general le permitió a Einstein construir modelos coherentes del Universo.
+    
+ \subsubsection{Ecuaciones de Friedmann}
+    
+    La isotropía y homogeneidad del Universo implicaron grandes simplificaciones a las ecuaciones de campo de Einstein, ecs. (\ref{eq:2.4.2}) y (\ref{eq:2.4.3}) reduciéndose entonces a este par de ecuaciones:
+    
+         \begin{empheq}[box=\fbox]{align}
+            \ddot{a} = - \frac{4 \pi G}{3} a \left( \varrho + \frac{3p}{c^2} \right) + \frac{1}{3} \Lambda a, \label{eq:2.4.4} \\
+            \notag \\ 
+            \dot{a}^2 =  \frac{8 \pi G \varrho}{3} a^2 - \frac{c^2}{R'^2} + \frac{1}{3} \Lambda a^2, \label{eq:2.4.5}
+        \end{empheq}
+        
+    con $a$ el factor de escala normalizado a la época actual $t_0$, $\varrho$ la densidad de masa inercial total del contenido de materia y radiación en el Universo y $p$ está asociado con  la presión. Recordando, además, que $R'$ es la curvatura de la geometría del modelo de mundo en la época presente $t_0$, por lo tanto, $c^2/R'^2$ es una constante de integración. 
+    
+    Las ecuaciones de Friedmann describen la dinámica de un Universo isotrópico y homogéneo. Fueron derivada primero por la relatividad general, pero, ¿por qué no con la teoría de Newton? El problema está en que la mecánica clásica es una teoría global que incluye un potencial gravitatorio que diverge en un Universo isotrópico y homegéneo, a diferencia de la relatividad general que es una teoría local.
+    
+ \subsubsection{Derivación Newtoniana de la Ecuaciones de Friedmann}
+ 
+     En mecánicla clásica es importante recordar que la noción de conservación de la masa y de la energía son independientes. En la cosmología Newtoniana para referirnos a distancias podemos considerar un fluido cósmico pero teniendo en cuenta que no estamos en un marco de referencia inercial. Así, al momento de aplicar la segunda ley de Newton tenemos que considerar que el punto de referencia puede cambiar. De esta manera, la distancia relativa viene dada por $R(t) = a(t) R$.
+     
+     La masa  encerrada $M_{int}$ dentro de una esfera de radio $R(t)$ es: 
+    
+        \begin{equation} \label{eq:2.4.6}
+            M_{int} = \int_M{dm} = \frac{4\pi}{3} \rho(t) a^3(t) R^3.
+        \end{equation}
+    
+     Imponiendo que $dM/dt=0$
+    
+        \[
+            \frac{dM}{dt}   = 0 =  \frac{4\pi}{3} \left( \rho(t)3 a^2(t) \dot{a}(t)  R^3 + a^3(t) R^3 \dot{\rho} \right), 
+        \]
+    
+    \begin{equation} \label{eq:2.4.7} 
+        \boxed{\dot{\rho} = -3 \rho(t) \frac{\dot{a}}{a}.}
+    \end{equation}
+    
+    
+    
     \begin{figure}[h]
         \centering
         \begin{subfigure}{\textwidth}

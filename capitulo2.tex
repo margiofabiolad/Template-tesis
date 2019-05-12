@@ -1067,54 +1067,226 @@
             \frac{dM}{dt}   = 0 =  \frac{4\pi}{3} \left( \rho(t)3 a^2(t) \dot{a}(t)  R^3 + a^3(t) R^3 \dot{\rho} \right), 
         \]
     
-    \begin{equation} \label{eq:2.4.7} 
-        \boxed{\dot{\rho} = -3 \rho(t) \frac{\dot{a}}{a}.}
+        \begin{equation} \label{eq:2.4.7} 
+            \boxed{\dot{\rho} = -3 \rho(t) \frac{\dot{a}}{a}.}
+        \end{equation}
+        
+    Nos referimos a ec. (\ref{eq:2.4.7}) como la {\textit{ecuación de Friedmann Newtoniana de la conservación de masa}}. Este resultado tiene sentido ya que en mecánica clásica el campo no transporta energía por lo que el campo gravitatorio no ejerce presión. 
+    
+    
+    Por el teorema de Gauss, el potencial gravitatorio es: 
+    
+        \begin{equation} \label{eq:2.4.8} 
+            V_{grav} = -4 \pi G \int_0^{R(t)}{\frac{\rho(t)r^2}{r}dr} = -4 \pi G \rho(t) \frac{R^2(t)}{2},
+        \end{equation}
+        
+    donde $R(t)$ es la distancia relativa entre dos puntos del Universo.
+    
+    Por otro lado, la fuerza gravitatoria que un punto de masa $m$ está experimentando es: 
+    
+        \begin{equation} \label{eq:2.4.9}
+            \vec{F} = -m \vec{\nabla} V_{grav} = - G \frac{M_{int}}{R^2(t)} m \hat{r}.
+        \end{equation}
+        
+     De la segunda ley de Newton $\vec{F} = m \vec{a}$, sustituyendo ecs. (\ref{eq:2.4.6}) y (\ref{eq:2.4.9}),
+    
+        \begin{equation} \label{eq:2.4.10}
+            m \frac{d^2 a(t)R}{dt^2} = - Gm \frac{M_{int}}{a^2(t)R^2} = -Gm \frac{4\pi}{3}\frac{a^3(t)R^3}{a^2(t)R^2}\rho(t).
+        \end{equation}
+    
+     Finalmente, 
+    
+        \begin{equation} \label{eq:2.4.11}
+            \boxed{\frac{\ddot{a}(t)}{a(t)} = - \frac{4\pi G}{3}  \rho(t).}
+        \end{equation}
+    
+    
+    De esta manera, se ha obtenido la {\textit{ecuación de aceleración de Friedmann Newtoniana}} que implica un Universo no estático. 
+    
+    Las ecuaciones de conservación de la masa y aceleración, (\ref{eq:2.4.7} y (\ref{eq:2.4.11}), son independientes por lo que tenemos solo dos ecuaciones de Friedmann independientes lineales.
+    
+    \large{\bf{Conservación de la Energía}}
+    
+    Estas ecuaciones tienen oculto el principio de conservación de la energía. Si tomamos (\ref{eq:2.4.11}) y la integramos, considerando que $R(t) = a(t) R$: 
+    
+        \begin{equation} \label{eq:2.4.12} 
+            \ddot{R}(t) = - \frac{4\pi G}{3} \rho(t) R(t)   = - G \frac{M_{int} }{R^2(t)}.
+        \end{equation}
+    
+    Multiplicando por $\dot{R}(t)$ e integrando 
+    
+        \[
+            \dot{R}(t) \left( \ddot{R}(t) = - G \frac{M_{int} }{R^2(t)} \right),
+        \]
+        
+        \begin{equation} \label{eq:2.4.13} 
+            \frac{1}{2}  \dot{R}^2(t)  = G \frac{M_{int} }{R(t)} + U,
+        \end{equation}
+    
+    la cual tiene la forma de la ecuación de la conservación de la energía. Manipulándola, llegamos a 
+    
+        \begin{equation} \label{eq:2.4.14} 
+            \boxed{\left(\frac{\dot{a}(t)}{a(t)} \right)^2 = \frac{8\pi G}{3} \rho(t) + \frac{2U}{R^2 a^2(t)}.}
+        \end{equation}
+    
+    \large{\bf{Con Constante Cosmológica $\Lambda$}}
+    
+    En la teoría clásica, $\Lambda$ no aparece de manera natural, pero gracias a las observaciones actuales sabemos que esta actúa como una fuerza repulsiva proporcional a la distancia radial que sufre la masa $m$. Agredando esto a la segunda ley de Newton, (\ref{eq:2.4.10}), se tiene:
+    
+        \begin{equation} \label{eq:2.4.15}
+            m \frac{d^2 a(t)R}{dt^2} = -Gm \frac{4\pi}{3}\frac{a^3(t)R^3}{a^2(t)R^2}\rho(t) + \frac{\Lambda}{3} a(t) mR,
+        \end{equation}
+    
+    donde el $1/3$ es arbitrario en $\Lambda$. Luego de algo de álgebra, obtenemos la ecuación de aceleración: 
+    
+        \begin{equation} \label{eq:2.4.16}
+            \boxed{\frac{\ddot{a}(t)}{a(t)} = - \frac{4\pi G}{3}  \rho(t) + \frac{\Lambda}{3}.} 
+        \end{equation}
+    
+    La constante de integración $U$ obtenida en (\ref{eq:2.4.13}) seguirá siendo la energía mecánica. 
+        
+        La constante de integración $U$ obtenida en (80) seguirá siendo la energía mecánica. 
+    
+    \begin{equation} \label{eq:2.4.17}
+        \boxed{\left(\frac{\dot{a}(t)}{a(t)} \right)^2 = \frac{8\pi G}{3} \rho(t) + \frac{\Lambda}{3} +  \frac{2U}{R^2 a^2(t)}.}
     \end{equation}
     
+     \subsubsection{Derivación Relativista de la Ecuaciones de Friedmann}
+     
+     
+     Retomando el conjunto de ecs. de Friedmann, usando la métrica de Walker - Robertson en su forma (\ref{eq:2.2.23}), la cual considera el principio cosmológico y la expansión del Universo, podemos calcular todos los elementos contenidos en las ecs. de Einstein, (\ref{eq:2.2.6}). En el caso del tensor de momento -  energía se considera un fluido perfecto, un fluido isotrópico, i.e., luce igual en cada dirección en la que nos movemos, y el cual tiene la forma $T_{\nu}^{\mu} = {\textrm{Diag}}(- \rho, p, p, p)$, donde $\rho$ y $p$ vienen siendo la densidad de energía y densidad de presión del fluido, respectivamente.  
+     
+     Ya que el tensor $T_{nu}^{mu}$ es conservado por virtud de las identidades de Bianchi, una tercera ecuación independiente, i.e., derivable de las otras dos (\ref{eq:2.4.4}) y (\ref{eq:2.4.5}), puede ser obtenida:
+
+        $$\dot{\rho} + 3H(\varrho + p) =0$$,
+
+    la cual es una ecuación de continuidad pero con la masa de flujo $\mathbf{j} = (\rho +  P/c^2)\mathbf{v}$ (Copeland, Sami, \& Tsujikawa (2006). Esta ecuación puede ser escrita también como una declaración de la conservación de la energía. De la primera ley de la Termodinámica
+    
+        \begin{equation} \label{eq:2.4.18}
+            dQ = 0 = dU + pdV,
+        \end{equation}
+        
+    entonces el cambio en la energía (negativo) depende solo del trabajo hecho por el sistema. $U$ es la energía interna y es igual a la suma de todas las energías que contribuyen a la energía total (energía cinética, energía térmica, etc.), $ \varepsilon_{tot} = \sum_i \varepsilon_i,$ en un fluido en el marco relativista. Con $U = \varepsilon_{tot} V$ la energía contenida en el volumen físico $V$ (reescalado como $a^3$). 
     
     
-    \begin{figure}[h]
-        \centering
-        \begin{subfigure}{\textwidth}
-            \begin{subfigure}{0.5\textwidth}
-                \includegraphics[width=\textwidth]{imagenes/autoX.pdf}
-                \refstepcounter{subfigure}\label{fig:autoX}
-            \end{subfigure}
-            \begin{subfigure}{0.5\textwidth}
-                \includegraphics[width=\textwidth]{imagenes/autoY.pdf}
-                \refstepcounter{subfigure}\label{fig:autoY}
-            \end{subfigure}           
-        \end{subfigure}
-            \begin{subfigure}{0.5\textwidth}
-                \includegraphics[width=\textwidth]{imagenes/autoXY.pdf}
-                \refstepcounter{subfigure}\label{fig:nullauto}
-            \end{subfigure}       
-        \caption{En las figuras (a) y (b), se tiene la evolución temporal de las variables de estado $x$ y $y$ respectivamente,  y en (c) el espacio de estados juntos con los nullclines, con la aplicación de una perturbación $\varepsilon = 0\text{.}02$ en la iteración $t=580$, se puede ver la aniquilación del comportamiento oscilatorio}
-        \label{fig:osci}
-    \end{figure}
-    Por ultimo cambiando el parámetro de dependencia de activación de la variable de recuperación a $b=0\text{.}18$, las
-    oscilaciones vistas en la figura \ref{fig:osci} se convierten en ráfagas de disparos aperiódicas, como se ve en la figura
-    \ref{fig:chaososci}. Este comportamiento ha sido estudiado en las redes neuronales, y se ha relacionado con el cambio de entre
-    distintas actividades cognitivas\citep{rabinovich1998role}.
-        \begin{figure}[h]
-        \centering
-        \begin{subfigure}{\textwidth}
-            \begin{subfigure}{0.5\textwidth}
-                \includegraphics[width=\textwidth]{imagenes/chaosX.pdf}
-                \refstepcounter{subfigure}\label{fig:chaosX}
-            \end{subfigure}
-            \begin{subfigure}{0.5\textwidth}
-                \includegraphics[width=\textwidth]{imagenes/chaosY.pdf}
-                \refstepcounter{subfigure}\label{fig:chaosY}
-            \end{subfigure}           
-        \end{subfigure}
-            \begin{subfigure}{0.5\textwidth}
-                \includegraphics[width=\textwidth]{imagenes/chaosXY.pdf}
-                \refstepcounter{subfigure}\label{fig:nullchaos}
-            \end{subfigure}       
-        \caption{En las figuras (a) y (b), se tiene la evolución temporal de las variables de estado $x$ y $y$ respectivamente,  y en (c) el espacio de estados juntos con las nullclines, se observa la presencia de un atractor extraño alrededor de la intersección de las nullclines del sistema}
-        \label{fig:chaososci}
-    \end{figure}
+        \begin{equation} \label{eq:2.4.19}
+            dU = - pdV \rightarrow{\frac{d}{dt} (\rho a^3) = -p \frac{d}{dt} a^3 }.
+        \end{equation} 
+        
+    Siendo $\dot{a} = da/dt$ y $d\varrho/da = - 3 (\varrho + p/c^2)/a$, si derivamos (\ref{eq:2.4.5}) y dividimos por $\dot{a}$, entonces recobramos la (\ref{eq:2.4.4}), la cual tiene la forma de una ecuación de fuerza que contiene implicitamente la Primera Ley de la Termodinámica, que es posible derivar de la mecánica Newtoniana como ya vimos en (\ref{eq:2.4.16}), solo que el término de presión $p/c^2$ no está contenido en ella. Esta presión puede ser interpretada como una ``corrección'' a la densidad de masa inercial, que es diferente a la fuerza de presión que, e.g., sostiene a las estrellas. Por otro lado, el término $\varrho + 3p/c^2$ puede leerse como la {\textit{densidad de masa gravitatoria activa}}.
+    
+    Friedmann obtuvo la solución general de (\ref{eq:2.4.5}) para modelos de mundo en expansión (Fridmann A. A., 1922, 1924), donde asumió que la constante cosmológica era diferente de cero ($\Lambda \neq 0$). De esta manera, se le llama {\textit{Modelos de Mundo de Friedmann}} ya que estos son capaces de incluir o no el término $\Lambda$. Friedmann murió en 1925 y nunca supo que los modelos de mundo llevarían su nombre. Cuando George Lema$\hat{i}$tre redescubrió sus soluciones en 1927 logró resaltar las grandes contribuciones de Friendmann y la atención de astrónomos y cosmólogos en 1930 (Lema$\hat{i}$tre, 1927). 
+    
+ 
+ 
+ \section{Modelos de Mundo de Friedmann Estándar con $\Lambda = 0$}
+ 
+    Cuando en cosmología se habla de {\textit{polvo}} se refiere a un fluido sin presión y por lo tanto $p=0$ en las ecuaciones de Friedmann. Comencemos por estudiar el caso en el que $\Lambda=0$. Por conveniencia, se tomará el valor de la densidad del fluido en la época actual $\varrho_0$ y por conservación de la masa $\varrho=\varrho_0 a^{-3}$. Bajo estas suposiciones, las ecuaciones (\ref{eq:2.4.4} y (\ref{eq:2.4.5}) se reducen a: 
+ 
+        \begin{empheq}[box=\fbox]{align}
+            \ddot{a} & = - \frac{4\pi G \varrho_0  }{3 a^2}, \label{eq:2.5.1} \\
+            \notag \\
+            \dot{a}^2 & = \frac{8\pi G \varrho_0  }{3 a} - \frac{c^2}{R'^2}. \label{eq:2.5.2}
+        \end{empheq}
+ 
+     Por conveniencia, se va a definir una {\textit{densidad crítica $\varrho_c$}} para la densidad de los modelos de mundo. Así:
+   
+        \begin{equation} \label{eq:2.5.3} 
+            \varrho_c = \frac{3H_0^2}{8\pi G} = 1.88 \times 10^{-26} \mathrm{h^2 kg m^{-3}},
+        \end{equation}
+        
+    siendo la constante de Hubble $H_0$ con un valor de $100 \, \mathrm{h \, km\, s^{-1} Mpc^{-1}}$ {\footnote{${\mathrm{h}}= H_0/(100 \, km \, s^{-1}\, Mpc^{-1})$}. En la época presente, la densidad del modelo $\varrho_0$ puede referirse al valor de la densidad crítica a través de lo que se conoce como {\textit{parámetro de densidad} $\Omega_0 = \varrho_0/\varrho_c$, donde este parámetro ha sido definido como
+    
+        \begin{equation} \label{eq:2.5.4} 
+            \Omega_0 = \frac{\varrho_0}{\varrho_c} = \frac{8 \pi G \varrho_0}{3 H_0^2}.
+        \end{equation}
+        
+    Así mismo, el parámetro de densidad bariónico es $\Omega_B$, el de la materia ordinario, o luminosa, $\Omega_{matt}$, a de la materia oscura (DM) como $\Omega_{DM}$. Estos parámetros representan las contribuciones a $\Omega_0$.  De (\ref{eq:2.5.3}) y (\ref{eq:2.5.4}), podemos reescribir las ecs. (\ref{eq:2.5.1}) y (\ref{eq:2.5.2}) como: 
+    
+         \begin{empheq}[box=\fbox]{align}
+            \ddot{a} & = - \frac{\Omega_0 H_0^2 }{ 2a^2}, \label{eq:2.5.5}\\
+            \notag \\
+            \dot{a}^2 & = \frac{\Omega_0 H_0^2  }{a} - \frac{c^2}{R'^2}. \label{eq:2.5.6}
+        \end{empheq}
+        
+    Con respecto a esta última ecuación, si establecemos los valores en la época actual $t=t_0$, entonces $a=1$ y $\dot{a} = H_0$, encontramos qué: 
+    
+        \begin{equation} \label{eq:2.5.7} 
+            \boxed{ R' = \frac{c/H_0}{(\Omega_0 - 1)^{1/2}},}
+        \end{equation}
+        
+    y recordando de secciones anteriores el radio de curvatura, ec. (\ref{eq:2.2.21}): $R_c = a R'$, además de la curvatura del espacio $\kappa = R_c^{-2}$, obtenemos:
+    
+    \begin{equation} \label{eq:2.5.8} 
+        \boxed{\kappa = \frac{\Omega_0 - 1}{(c/H_0)^2}.}
+    \end{equation}
+    
+    Existe una relación uno a uno entre la densidad del Universo $\Omega_0$ y la curvatura del espacio $\kappa$; uno de los grandes resultados de los Modelos de Mundo de Friedmann cuando la constante cosmológica $\Lambda=0$.
+        
+ 
+ \subsubsection{Dinámica de los Modelos de Friedmann con $\Lambda = 0$}
+ 
+    Si incluimos la relación (\ref{eq:2.5.7}) en (\ref{eq:2.5.6}) 
+    
+        \begin{equation} \label{eq:2.5.9}
+            \boxed{\dot{a}^2 = H_o^2 \left[ \Omega_0 \left( \frac{1}{a} - 1 \right) + 1 \right].}
+        \end{equation}
+    
+    En el caso de $a >> 1$, $\dot{a}^2$ se escribe como
+    
+        \begin{equation} \label{eq:2.5.10}
+            \boxed{ \dot{a}^2  = H_o^2 (1- \Omega_0).}
+        \end{equation}
+    
+    Y de esta últiam ecuación, se desprende tres casos.
+    
+   
+ 
+        \begin{itemize}
+            \item[i.] Modelos con un parámetro de densidad $\Omega_0 < 1$, los cuales tienen una geometría hiperbólica abierta y se expanden a $a=\infty$. Donde 
+            
+                $$\dot{a}  = H_o (1- \Omega_0)^{1/2}.$$
+        
+            \item[ii.] También, modelos con un parámetro $\Omega_0 >1$. Aquellos con geometría esférica cerrada. Dejan de expandirse en algún valor finito de $a$, entonces $a=a_{max}$ (en el infinito tienen ``tasas de expansión imaginarias''), el cual alcanzan en un tiempo máximo 
+            
+                $$t_{max} = \frac{\pi \Omega_0}{2 H_0 (\Omega_0 - 1)^{3/2}}.$$
+        
+            \item[iii.] Por último, tenemos el caso cuando el parámetro de densidad $\Omega_0 = 1$, cuyo modelo tiene una velocidad de expansión que tiende a cero cuando $a \rightarrow{\infty}$. 
+ 
+            Se conoce como {\textit{Modelo Einstein- de Sitter}} o {\textit{modelo crítico}}. Plantea un Universo que no colapsa ni tampoco se expande por siempre. El valor del factor de escala varía con el tiempo cósmico como:
+
+                \begin{equation} \label{eq:2.5.11} 
+                    a(t) ) \left( \frac{t}{t_0} \right)^{2/3},
+                \end{equation} 
+
+            donde $\kappa = 0$ y en la época presente                   
+                $$t_0 = (2/3) H_0^{2/3}$$.
+    
+        \end{itemize}
+        
+        
+        \begin{wrapfigure}[15]{r}{0.5\linewidth}        \includegraphics[width=0.5\textwidth]{grafica_scale_factor_timepp219Malcolm.png}
+            \caption{\small{$\Omega = \varrho_0/\varrho_c$. Para  $\Omega_0 > 1$, el Universo colapsa a $a=0$. Para $\Omega_0 <1$, el Universo se expande hasta el infinito y la velocidad de expansión es infinita como $a \rightarrow{\infty}$ . Por último, $\Omega_=1$. Para el del tiempo, este viene en términos del tiempo adimensional $H_0 t$. Siendo $t_0$ es el tiempo actual, cuando $\Omega_0 = 0$, $H_0 t_0=1$; $\Omega_0 = 1$, $ H_0 t_0 = 2/3$ y para $\Omega_0 = 2$, $H_0 t_0 = 0.57$. Las tres curvas tienen la misma pendiente $1$ para $a(1)$.}}
+            \label{fig:2.7}
+    \end{wrapfigure}
+    
+    En la figura (\ref{fig:2.7}) se muestran algunas soluciones a la ec. (\ref{eq:2.5.9}) el cual ilustra la relación entre la dinámica y geometría de los modelos de Friedmann sin constante cosmológica. El eje $x$ viene en unidades de $H_0^{-1}$. Nótese la línea de la presente época $a=1$.  Las pendientes en ese punto son siempre $1$. Así mismo, la edad actual del Universo para cada parámetro es dada por la intersección de cada curva con la línea en $a=1$. Se aprecia el caso en que $\Omega_0 = 0$, un modelo de mundo vacío también conocido como {\textit{Modelo de Milne}} donde $a(t) = H_0 t$ y $\kappa = - (H_0/c)^2$. 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
     
 \section{Sincronización}
     La sincronización es un fenómeno colectivo que se presenta cuando un grupo de osciladores que interactúan de alguna manera
